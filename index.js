@@ -12,6 +12,7 @@ const ideaRoutes = require("./routes/ideaRoutes");
 const noteRoutes = require("./routes/noteRoutes");
 const moneyRoutes = require("./routes/moneyRoutes");
 const aiRoutes = require("./routes/aiRoutes");
+const uploadRoutes = require("./routes/uploadRoutes");
 
 // Initialize app
 const app = express();
@@ -71,6 +72,7 @@ app.use("/api/ideas", ideaRoutes);
 app.use("/api/notes", noteRoutes);
 app.use("/api/money", moneyRoutes);
 app.use("/api/ai", aiLimiter, aiRoutes);
+app.use("/api/uploads", uploadRoutes);
 
 // Health check route
 app.get("/", (req, res) => {
@@ -79,6 +81,12 @@ app.get("/", (req, res) => {
 
 // Error handling middleware
 app.use((err, req, res, next) => {
+  if (err?.code === "LIMIT_FILE_SIZE") {
+    return res.status(400).json({ success: false, message: "Image is too large (max 6MB)" });
+  }
+  if (err?.message === "Only image files are allowed") {
+    return res.status(400).json({ success: false, message: err.message });
+  }
   console.error(err.stack);
   res.status(500).json({ success: false, message: "Something went wrong" });
 });

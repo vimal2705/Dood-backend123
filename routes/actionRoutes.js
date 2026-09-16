@@ -19,10 +19,10 @@ const createActionValidation = [
   body('priority', 'Priority must be one of: low, medium, high')
     .optional()
     .isIn(['low', 'medium', 'high']),
-  body('status', 'Status must be one of: not started, in progress, completed')
+  body('status', 'Status must be one of: not started, in progress, completed, dropped')
     .optional()
-    .isIn(['not started', 'in progress', 'completed']),
-  body('dueDate', 'Due date must be a valid date').optional().isISO8601(),
+    .isIn(['not started', 'in progress', 'completed', 'dropped']),
+  body('dueDate').optional({ nullable: true }).isISO8601(),
 ];
 
 const updateActionValidation = [
@@ -30,10 +30,10 @@ const updateActionValidation = [
   body('priority', 'Priority must be one of: low, medium, high')
     .optional()
     .isIn(['low', 'medium', 'high']),
-  body('status', 'Status must be one of: not started, in progress, completed')
+  body('status', 'Status must be one of: not started, in progress, completed, dropped')
     .optional()
-    .isIn(['not started', 'in progress', 'completed']),
-  body('dueDate', 'Due date must be a valid date').optional().isISO8601(),
+    .isIn(['not started', 'in progress', 'completed', 'dropped']),
+  body('dueDate').optional({ nullable: true }).isISO8601(),
 ];
 
 // All routes require authentication

@@ -3,6 +3,7 @@ const Dream = require('../models/Dream');
 const Task = require('../models/Task');
 const Note = require('../models/Note');
 const { validationResult } = require('express-validator');
+const { asId, syncDreamProgress } = require('../utils/dreamProgress');
 
 // @desc    Create a new action
 // @route   POST /api/actions
@@ -36,6 +37,7 @@ exports.createAction = async (req, res) => {
 
     await action.save();
     await action.populate('dreamId', 'title subTitle priority status');
+    await syncDreamProgress(req.user.id, asId(action.dreamId));
 
     res.status(201).json({
       success: true,
@@ -174,6 +176,8 @@ exports.updateAction = async (req, res) => {
       return res.status(404).json({ success: false, message: 'Action not found' });
     }
 
+    const previousDreamId = asId(action.dreamId);
+
     // If dreamId is being changed, verify new dream belongs to user
     if (dreamId && dreamId !== action.dreamId?.toString()) {
       const dream = await Dream.findOne({ _id: dreamId, userId: req.user.id });
@@ -188,9 +192,11 @@ exports.updateAction = async (req, res) => {
     if (priority !== undefined) action.priority = priority;
     if (status !== undefined) {
       action.status = status;
-      // If marking as completed, set completion date
       if (status === 'completed' && !action.completedDate) {
         action.completedDate = new Date();
+      }
+      if (status === 'dropped') {
+        action.completedDate = null;
       }
     }
     if (dueDate !== undefined) action.dueDate = dueDate;
@@ -198,6 +204,10 @@ exports.updateAction = async (req, res) => {
 
     await action.save();
     await action.populate('dreamId', 'title subTitle priority status');
+    await syncDreamProgress(req.user.id, asId(action.dreamId));
+    if (previousDreamId && previousDreamId !== asId(action.dreamId)) {
+      await syncDreamProgress(req.user.id, previousDreamId);
+    }
 
     res.status(200).json({
       success: true,
@@ -232,6 +242,7 @@ exports.deleteAction = async (req, res) => {
         linkedId: action._id,
       }),
     ]);
+    await syncDreamProgress(req.user.id, asId(action.dreamId));
 
     res.status(200).json({
       success: true,
@@ -261,6 +272,8 @@ exports.completeAction = async (req, res) => {
     if (!action) {
       return res.status(404).json({ success: false, message: 'Action not found' });
     }
+
+    await syncDreamProgress(req.user.id, asId(action.dreamId));
 
     res.status(200).json({
       success: true,

@@ -13,6 +13,7 @@ const noteRoutes = require("./routes/noteRoutes");
 const moneyRoutes = require("./routes/moneyRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
 
 // Initialize app
 const app = express();
@@ -73,6 +74,7 @@ app.use("/api/notes", noteRoutes);
 app.use("/api/money", moneyRoutes);
 app.use("/api/ai", aiLimiter, aiRoutes);
 app.use("/api/uploads", uploadRoutes);
+app.use("/api/review", reviewRoutes);
 
 // Health check route
 app.get("/", (req, res) => {

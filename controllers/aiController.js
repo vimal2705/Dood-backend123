@@ -73,7 +73,7 @@ const fallbackMorningNote = (context) => {
   }
   const dream = context?.dreams?.[0];
   if (dream?.title) {
-    return `${dream.title} is still a vision. Give it one small to-do today.`;
+    return `${dream.title} still has no result you can control. Name one action, then one to-do today.`;
   }
   return "Name one dream. Give today one step. That is enough.";
 };
@@ -181,7 +181,7 @@ exports.planToday = async (req, res) => {
     const context = await buildUserContext(req.user.id);
     const payload = `${formatContextForPrompt(context)}
 
-Plan today for this person. Start with missed to-dos if any exist. Do not pile on more than they can finish. Prefer closing existing work over inventing new dreams.
+Plan today’s productivity. Start with missed to-dos if any exist. Do not pile on more than they can finish. Prefer closing existing work over inventing new dreams. Actions should produce a result; to-dos should be quick.
 
 ${JSON_ONLY_SUFFIX}
 
@@ -247,7 +247,8 @@ exports.expandDream = async (req, res) => {
     const context = await buildUserContext(req.user.id);
     const payload = `${formatContextForPrompt(context)}
 
-Break this dream into a plan. Dream:
+Break this dream into actions that produce results, then dated to-dos for productivity.
+Dream:
 ${JSON.stringify({
   id: String(dream._id),
   title: dream.title,
@@ -260,7 +261,7 @@ ${JSON.stringify({
   targetDate: dream.targetDate,
 })}
 
-Do not celebrate a vision with no next step. Challenge if it is vague or too big for the next 48 hours. Prefer 2-4 actions and a few dated tasks. Do not overload today if missed to-dos already exist.
+A dream is what they pay for (time, money, effort) to achieve. Do not celebrate it with no action. Each action must be a short result they can control. To-dos are daily productivity only. Challenge if it is vague or too big for the next 48 hours. Prefer 2-4 actions and a few dated to-dos. Do not overload today if missed to-dos already exist.
 
 ${JSON_ONLY_SUFFIX}
 
@@ -409,7 +410,7 @@ exports.classifyIdea = async (req, res) => {
     const context = await buildUserContext(req.user.id);
     const payload = `${formatContextForPrompt(context)}
 
-Classify this Brain idea. Is it a dream (vision), an action (plan), a task (dated to-do), a note, or noise?
+Classify this Brain idea. Is it a dream (long-term achievement they would pay for, with no plan yet), an action (a short result they can control), a to-do (daily productivity), a note, or noise?
 
 Idea:
 ${JSON.stringify({
@@ -419,7 +420,7 @@ ${JSON.stringify({
   status: idea.status,
 })}
 
-Challenge if they are treating a vision like a checkbox, or dumping a chore as a life goal.
+Challenge if they are treating a dream like a to-do, or dumping a chore as a life goal.
 
 ${JSON_ONLY_SUFFIX}
 

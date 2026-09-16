@@ -1,6 +1,9 @@
 const Idea = require('../models/Idea');
 const Dream = require('../models/Dream');
+const Action = require('../models/Action');
+const Task = require('../models/Task');
 const { toObjectId } = require('../utils/ids');
+const { syncDreamProgress } = require('../utils/dreamProgress');
 
 // Create a new idea
 exports.createIdea = async (req, res) => {
@@ -181,8 +184,8 @@ exports.updateIdea = async (req, res) => {
       idea.dreamId = null;
     }
 
-    if (title) idea.title = title;
-    if (description) idea.description = description;
+    if (title !== undefined) idea.title = title;
+    if (description !== undefined) idea.description = description;
     if (priority) idea.priority = priority;
     if (status) idea.status = status;
     if (tags) idea.tags = tags;
@@ -233,6 +236,111 @@ exports.markAsImplemented = async (req, res) => {
       success: false,
       message: error.message
     });
+  }
+};
+
+exports.convertIdea = async (req, res) => {
+  try {
+    const idea = await Idea.findOne({
+      _id: req.params.id,
+      userId: req.user.id,
+    });
+    if (!idea) {
+      return res.status(404).json({ success: false, message: 'Idea not found' });
+    }
+
+    const kind = String(req.body.kind || '').toLowerCase();
+    const kinds = ['dream', 'action', 'task'];
+    if (!kinds.includes(kind)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Convert to dream, action, or task',
+      });
+    }
+
+    const title = (req.body.title || idea.title || '').trim().slice(0, 100);
+    if (!title) {
+      return res.status(400).json({ success: false, message: 'Title is required' });
+    }
+    const description = String(idea.description || '').trim().slice(0, 1000);
+
+    let created = null;
+    if (kind === 'dream') {
+      const types = ['work', 'achievement', 'relation', 'finance', 'home'];
+      const type = types.includes(req.body.type) ? req.body.type : 'work';
+      created = await Dream.create({
+        userId: req.user.id,
+        title,
+        subTitle: (description || 'Captured from Brain').slice(0, 200),
+        description,
+        type,
+        priority: 'medium',
+      });
+      idea.dreamId = created._id;
+    }
+
+    if (kind === 'action') {
+      let dreamId = req.body.dreamId || idea.dreamId || null;
+      if (dreamId) {
+        const dream = await Dream.findOne({ _id: dreamId, userId: req.user.id });
+        if (!dream) {
+          return res.status(404).json({ success: false, message: 'Dream not found' });
+        }
+        dreamId = dream._id;
+      }
+      created = await Action.create({
+        userId: req.user.id,
+        title,
+        description,
+        priority: 'medium',
+        status: 'not started',
+        dreamId,
+      });
+      if (dreamId) {
+        idea.dreamId = dreamId;
+        await syncDreamProgress(req.user.id, dreamId);
+      }
+    }
+
+    if (kind === 'task') {
+      let dreamId = req.body.dreamId || idea.dreamId || null;
+      if (dreamId) {
+        const dream = await Dream.findOne({ _id: dreamId, userId: req.user.id });
+        if (!dream) {
+          return res.status(404).json({ success: false, message: 'Dream not found' });
+        }
+        dreamId = dream._id;
+      }
+      const due = req.body.dueDate ? new Date(req.body.dueDate) : new Date();
+      due.setHours(18, 0, 0, 0);
+      created = await Task.create({
+        userId: req.user.id,
+        title,
+        description,
+        priority: 'medium',
+        dueDate: due,
+        dreamId,
+      });
+      if (dreamId) {
+        idea.dreamId = dreamId;
+        await syncDreamProgress(req.user.id, dreamId);
+      }
+    }
+
+    idea.status = 'implemented';
+    idea.implementation = `Converted to ${kind}`;
+    await idea.save();
+
+    return res.status(201).json({
+      success: true,
+      message: `Idea is now a ${kind}`,
+      kind,
+      idea,
+      created,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: error.message });
   }
 };
 

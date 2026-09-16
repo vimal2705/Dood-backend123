@@ -50,6 +50,24 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    eveningNote: {
+      type: String,
+      trim: true,
+      maxlength: 280,
+      default: "",
+    },
+    eveningNoteOn: {
+      type: String,
+      default: "",
+    },
+    lastWeeklyReviewOn: {
+      type: String,
+      default: "",
+    },
+    intent: {
+      type: String,
+      enum: ["exam", "business", "sport", "home", "money"],
+    },
     resetPasswordOtp: String,
     resetPasswordOtpExpire: Date,
     resetPasswordTokenHash: String,

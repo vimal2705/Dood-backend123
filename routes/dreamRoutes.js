@@ -26,6 +26,7 @@ const createDreamValidation = [
     .isIn(['in progress', 'slow down', 'boosted']),
   body('progress', 'Progress must be between 0 and 100').optional().isInt({ min: 0, max: 100 }),
   body('image', 'Image must be a URL').optional({ values: 'falsy' }).isString(),
+  body('points', 'Points must be an array of strings').optional().isArray({ max: 12 }),
 ];
 
 const updateDreamValidation = [
@@ -42,6 +43,7 @@ const updateDreamValidation = [
     .isIn(['in progress', 'slow down', 'boosted']),
   body('progress', 'Progress must be between 0 and 100').optional().isInt({ min: 0, max: 100 }),
   body('image', 'Image must be a URL').optional({ values: 'falsy' }).isString(),
+  body('points', 'Points must be an array of strings').optional().isArray({ max: 12 }),
 ];
 
 const progressValidation = [

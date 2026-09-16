@@ -62,6 +62,13 @@ const summarizeMoney = (entries, financeDreams = []) => {
         title: `Cap ${topSpend.category} spend this week`,
         reason: "One category is eating the month.",
       };
+    } else if (dream && Number(dream.targetAmount) > 0) {
+      const target = roundMoney(dream.targetAmount);
+      insight = `₹${saved.toLocaleString("en-IN")} of ₹${target.toLocaleString("en-IN")} toward ${dream.title}.`;
+      nextMove = {
+        title: saved >= target ? `Protect the ${dream.title} target` : `Move money toward ${dream.title}`,
+        reason: saved >= target ? "The number is hit. Do not spend it back." : "The finance dream has a number. Fund it.",
+      };
     } else if (dream && saved > 0) {
       insight = `₹${saved.toLocaleString("en-IN")} saved this month toward ${dream.title}.`;
       nextMove = {
@@ -95,7 +102,12 @@ const summarizeMoney = (entries, financeDreams = []) => {
     insight,
     nextMove,
     financeDream: dream
-      ? { id: String(dream._id || dream.id), title: dream.title }
+      ? {
+          id: String(dream._id || dream.id),
+          title: dream.title,
+          targetAmount: roundMoney(dream.targetAmount || 0),
+          saved,
+        }
       : null,
   };
 };

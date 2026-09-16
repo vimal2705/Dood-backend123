@@ -4,11 +4,12 @@ const Action = require('../models/Action');
 const Task = require('../models/Task');
 const Idea = require('../models/Idea');
 const { toObjectId } = require('../utils/ids');
+const { sanitizePoints } = require('../utils/points');
 
 // Create a new note
 exports.createNote = async (req, res) => {
   try {
-    const { content, linkedType, linkedId, tags, isPinned } = req.body;
+    const { content, linkedType, linkedId, tags, isPinned, points } = req.body;
 
     // Validate linkedType and linkedId
     if (linkedType !== 'standalone') {
@@ -55,7 +56,8 @@ exports.createNote = async (req, res) => {
       linkedType: linkedType || 'standalone',
       linkedId: linkedType !== 'standalone' ? linkedId : null,
       tags: tags || [],
-      isPinned: isPinned || false
+      isPinned: isPinned || false,
+      points: sanitizePoints(points) || [],
     });
 
     await note.save();
@@ -238,7 +240,7 @@ exports.getStandaloneNotes = async (req, res) => {
 // Update note
 exports.updateNote = async (req, res) => {
   try {
-    const { content, tags, isPinned } = req.body;
+    const { content, tags, isPinned, points } = req.body;
 
     const note = await Note.findOne({
       _id: req.params.id,
@@ -255,6 +257,7 @@ exports.updateNote = async (req, res) => {
     if (content !== undefined) note.content = content;
     if (tags !== undefined) note.tags = tags;
     if (isPinned !== undefined) note.isPinned = isPinned;
+    if (points !== undefined) note.points = sanitizePoints(points) || [];
 
     await note.save();
 

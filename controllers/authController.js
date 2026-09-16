@@ -2,6 +2,7 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const sendEmail = require("../utils/email");
+const { INTENTS } = require("../utils/intents");
 const { validationResult } = require("express-validator");
 
 // Generate JWT Token
@@ -34,7 +35,7 @@ exports.signup = async (req, res) => {
       return res.status(400).json({ success: false, errors: errors.array() });
     }
 
-    const { name, email, username, password, phoneNumber, dob } = req.body;
+    const { name, email, username, password, phoneNumber, dob, intent } = req.body;
 
     // Check if user already exists
     let user = await User.findOne({ $or: [{ email }, { username }] });
@@ -52,6 +53,7 @@ exports.signup = async (req, res) => {
       password,
       phoneNumber,
       dob,
+      ...(INTENTS.includes(intent) ? { intent } : {}),
     });
 
     await user.save();
@@ -69,6 +71,7 @@ exports.signup = async (req, res) => {
         username: user.username,
         phoneNumber: user.phoneNumber,
         dob: user.dob,
+        intent: user.intent || null,
       },
     });
   } catch (error) {
@@ -402,6 +405,67 @@ exports.getMe = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.updateProfile = async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, errors: errors.array() });
+    }
+
+    const user = await User.findById(req.user.id);
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+
+    const { name, phoneNumber, intent } = req.body;
+    if (name !== undefined) user.name = String(name).trim();
+    if (phoneNumber !== undefined) user.phoneNumber = String(phoneNumber).trim();
+    if (INTENTS.includes(intent)) {
+      user.intent = intent;
+    }
+
+    await user.save();
+    return res.json({
+      success: true,
+      message: "Profile updated",
+      user,
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.changePassword = async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, errors: errors.array() });
+    }
+
+    const { currentPassword, newPassword } = req.body;
+    const user = await User.findById(req.user.id).select("+password");
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+
+    const matches = await user.matchPassword(currentPassword);
+    if (!matches) {
+      return res.status(400).json({
+        success: false,
+        message: "Current password is wrong",
+      });
+    }
+
+    user.password = newPassword;
+    await user.save();
+    return res.json({ success: true, message: "Password updated" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: error.message });
   }
 };
 

@@ -14,6 +14,16 @@ const noteSchema = new mongoose.Schema(
       trim: true,
       maxlength: [1000, 'Note cannot be more than 1000 characters'],
     },
+    points: {
+      type: [
+        {
+          type: String,
+          trim: true,
+          maxlength: [200, 'Point cannot be more than 200 characters'],
+        },
+      ],
+      default: [],
+    },
     linkedType: {
       type: String,
       enum: ['dream', 'action', 'task', 'idea', 'standalone'],

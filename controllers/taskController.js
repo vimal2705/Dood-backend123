@@ -3,6 +3,7 @@ const Action = require('../models/Action');
 const Dream = require('../models/Dream');
 const Note = require('../models/Note');
 const { validationResult } = require('express-validator');
+const { asId, syncDreamProgress } = require('../utils/dreamProgress');
 
 const startOfDay = (date = new Date()) => {
   const next = new Date(date);
@@ -14,6 +15,12 @@ const todayAtHour = (hour = 18) => {
   const next = new Date();
   next.setHours(hour, 0, 0, 0);
   return next;
+};
+
+const isSameCalendarDay = (left, right) => {
+  if (!left && !right) return true;
+  if (!left || !right) return false;
+  return startOfDay(left).getTime() === startOfDay(right).getTime();
 };
 
 const carryOverMissedTasks = async (userId) => {
@@ -89,6 +96,10 @@ exports.createTask = async (req, res) => {
 
     await task.save();
     await task.populate(['actionId', 'dreamId']);
+    await syncDreamProgress(
+      req.user.id,
+      asId(task.dreamId) || asId(task.actionId?.dreamId),
+    );
 
     res.status(201).json({
       success: true,
@@ -251,7 +262,22 @@ exports.getTasksByDream = async (req, res) => {
 // @access  Private
 exports.updateTask = async (req, res) => {
   try {
-    const { title, description, priority, dueDate, actionId, dreamId, estimatedTime, timeSpent } = req.body;
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, errors: errors.array() });
+    }
+
+    const {
+      title,
+      description,
+      priority,
+      dueDate,
+      dateChangeReason,
+      actionId,
+      dreamId,
+      estimatedTime,
+      timeSpent,
+    } = req.body;
 
     // Find task
     let task = await Task.findOne({
@@ -283,7 +309,31 @@ exports.updateTask = async (req, res) => {
     if (title !== undefined) task.title = title;
     if (description !== undefined) task.description = description;
     if (priority !== undefined) task.priority = priority;
-    if (dueDate !== undefined) task.dueDate = dueDate;
+    if (dueDate !== undefined) {
+      const nextDue = dueDate ? new Date(dueDate) : null;
+      const dateMoved = !isSameCalendarDay(task.dueDate, nextDue);
+      if (dateMoved) {
+        const reason = String(dateChangeReason || "").trim();
+        if (reason.length < 3) {
+          return res.status(400).json({
+            success: false,
+            message: "Say why you are moving this to-do",
+          });
+        }
+        task.dateChanges.push({
+          from: task.dueDate || null,
+          to: nextDue,
+          reason,
+          changedAt: new Date(),
+        });
+        if (task.dateChanges.length > 20) {
+          task.dateChanges.splice(0, task.dateChanges.length - 20);
+        }
+        task.dateChangeReason = reason;
+        task.missedFrom = null;
+      }
+      task.dueDate = nextDue;
+    }
     if (actionId !== undefined) task.actionId = actionId || null;
     if (dreamId !== undefined) task.dreamId = dreamId || null;
     if (estimatedTime !== undefined) task.estimatedTime = estimatedTime;
@@ -291,6 +341,10 @@ exports.updateTask = async (req, res) => {
 
     await task.save();
     await task.populate(['actionId', 'dreamId']);
+    await syncDreamProgress(
+      req.user.id,
+      asId(task.dreamId) || asId(task.actionId?.dreamId),
+    );
 
     res.status(200).json({
       success: true,
@@ -329,6 +383,10 @@ exports.toggleTaskCompletion = async (req, res) => {
 
     await task.save();
     await task.populate(['actionId', 'dreamId']);
+    await syncDreamProgress(
+      req.user.id,
+      asId(task.dreamId) || asId(task.actionId?.dreamId),
+    );
 
     res.status(200).json({
       success: true,
@@ -392,6 +450,10 @@ exports.deleteTask = async (req, res) => {
       linkedType: 'task',
       linkedId: task._id,
     });
+    await syncDreamProgress(
+      req.user.id,
+      asId(task.dreamId) || asId(task.actionId?.dreamId),
+    );
 
     res.status(200).json({
       success: true,

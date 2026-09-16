@@ -10,6 +10,8 @@ const {
   verifyOtpAndReset,
   getMe,
   getMeWithToken,
+  updateProfile,
+  changePassword,
 } = require("../controllers/authController");
 const auth = require("../middleware/auth");
 
@@ -63,6 +65,27 @@ router.post(
   verifyOtpAndReset,
 );
 router.get("/me", auth, getMe);
+router.put(
+  "/me",
+  auth,
+  [
+    body("name").optional().trim().notEmpty(),
+    body("phoneNumber").optional().matches(/^\d{10}$/),
+    body("intent").optional(),
+  ],
+  updateProfile,
+);
+router.put(
+  "/password",
+  auth,
+  [
+    body("currentPassword", "Current password is required").notEmpty(),
+    body("newPassword", "Password must be at least 6 characters").isLength({
+      min: 6,
+    }),
+  ],
+  changePassword,
+);
 router.post("/me-with-token", getMeWithToken);
 
 module.exports = router;

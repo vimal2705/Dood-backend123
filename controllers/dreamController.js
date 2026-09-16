@@ -5,6 +5,8 @@ const Idea = require('../models/Idea');
 const Note = require('../models/Note');
 const MoneyEntry = require('../models/MoneyEntry');
 const { validationResult } = require('express-validator');
+const { sanitizePoints } = require('../utils/points');
+const { syncAllDreamProgress, syncDreamProgress } = require('../utils/dreamProgress');
 
 // @desc    Create a new dream
 // @route   POST /api/dreams
@@ -16,7 +18,7 @@ exports.createDream = async (req, res) => {
       return res.status(400).json({ success: false, errors: errors.array() });
     }
 
-    const { title, subTitle, description, image, priority, type, status, targetDate } = req.body;
+    const { title, subTitle, description, image, priority, type, status, targetDate, targetAmount, points } = req.body;
 
     // Check if priority is "top" and user already has a "top" dream
     if (priority === 'top') {
@@ -39,6 +41,11 @@ exports.createDream = async (req, res) => {
       type,
       status: status || 'in progress',
       targetDate,
+      targetAmount:
+        type === "finance" && targetAmount !== undefined && targetAmount !== null && targetAmount !== ""
+          ? Number(targetAmount)
+          : null,
+      points: sanitizePoints(points) || [],
     });
 
     await dream.save();
@@ -95,6 +102,8 @@ exports.getAllDreams = async (req, res) => {
       }
     }
 
+    await syncAllDreamProgress(req.user.id);
+
     const dreams = await Dream.find(filter)
       .sort(sortObject)
       .populate('userId', 'name email');
@@ -139,7 +148,7 @@ exports.getDreamById = async (req, res) => {
 // @access  Private
 exports.updateDream = async (req, res) => {
   try {
-    const { title, subTitle, description, image, priority, type, status, targetDate, progress } = req.body;
+    const { title, subTitle, description, image, priority, type, status, targetDate, progress, targetAmount, points } = req.body;
 
     // Find dream
     let dream = await Dream.findOne({
@@ -175,7 +184,12 @@ exports.updateDream = async (req, res) => {
     if (type !== undefined) dream.type = type;
     if (status !== undefined) dream.status = status;
     if (targetDate !== undefined) dream.targetDate = targetDate;
+    if (targetAmount !== undefined) {
+      dream.targetAmount =
+        targetAmount === null || targetAmount === "" ? null : Number(targetAmount);
+    }
     if (progress !== undefined) dream.progress = progress;
+    if (points !== undefined) dream.points = sanitizePoints(points) || [];
 
     await dream.save();
 
@@ -298,21 +312,7 @@ exports.getDreamStats = async (req, res) => {
 // @access  Private
 exports.updateDreamProgress = async (req, res) => {
   try {
-    const { progress } = req.body;
-
-    if (progress === undefined) {
-      return res.status(400).json({ success: false, message: 'Please provide progress value' });
-    }
-
-    if (progress < 0 || progress > 100) {
-      return res.status(400).json({ success: false, message: 'Progress must be between 0 and 100' });
-    }
-
-    const dream = await Dream.findOneAndUpdate(
-      { _id: req.params.id, userId: req.user.id },
-      { progress },
-      { new: true, runValidators: true }
-    );
+    const dream = await syncDreamProgress(req.user.id, req.params.id);
 
     if (!dream) {
       return res.status(404).json({ success: false, message: 'Dream not found' });

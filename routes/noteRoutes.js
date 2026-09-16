@@ -25,7 +25,8 @@ const createNoteValidation = [
     .optional()
     .isIn(['dream', 'action', 'task', 'idea', 'standalone']),
   body('tags', 'Tags must be an array').optional().isArray(),
-  body('isPinned', 'IsPinned must be a boolean').optional().isBoolean()
+  body('isPinned', 'IsPinned must be a boolean').optional().isBoolean(),
+  body('points', 'Points must be an array of strings').optional().isArray({ max: 12 }),
 ];
 
 const updateNoteValidation = [
@@ -36,7 +37,8 @@ const updateNoteValidation = [
     .isLength({ max: 1000 })
     .withMessage('Content cannot be more than 1000 characters'),
   body('tags', 'Tags must be an array').optional().isArray(),
-  body('isPinned', 'IsPinned must be a boolean').optional().isBoolean()
+  body('isPinned', 'IsPinned must be a boolean').optional().isBoolean(),
+  body('points', 'Points must be an array of strings').optional().isArray({ max: 12 }),
 ];
 
 // Validation error handler

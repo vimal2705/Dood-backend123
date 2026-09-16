@@ -1,9 +1,11 @@
+const User = require("../models/User");
 const Dream = require("../models/Dream");
 const Action = require("../models/Action");
 const Task = require("../models/Task");
 const Idea = require("../models/Idea");
 const Note = require("../models/Note");
 const MoneyEntry = require("../models/MoneyEntry");
+const { intentCoachLine } = require("./intents");
 const { monthBounds, summarizeMoney } = require("./moneyInsights");
 
 const asId = (value) => {
@@ -38,7 +40,7 @@ const slim = (doc, fields) => {
 
 const buildUserContext = async (userId) => {
   const { start, end } = monthBounds();
-  const [dreams, actions, tasks, ideas, notes, moneyEntries] = await Promise.all([
+  const [dreams, actions, tasks, ideas, notes, moneyEntries, user] = await Promise.all([
     Dream.find({ userId }).sort({ updatedAt: -1 }).limit(20),
     Action.find({ userId })
       .setOptions({ _recursed: true })
@@ -54,6 +56,7 @@ const buildUserContext = async (userId) => {
       userId,
       happenedAt: { $gte: start, $lte: end },
     }),
+    User.findById(userId).select("name intent"),
   ]);
 
   const todayStart = new Date();
@@ -72,6 +75,9 @@ const buildUserContext = async (userId) => {
 
   return {
     generatedAt: new Date().toISOString(),
+    name: user?.name || "",
+    intent: user?.intent || "",
+    intentCoach: intentCoachLine(user?.intent) || "",
     dreams: dreams.map((dream) =>
       slim(dream, [
         "title",
@@ -81,17 +87,24 @@ const buildUserContext = async (userId) => {
         "status",
         "progress",
         "targetDate",
+        "targetAmount",
+        "points",
       ]),
     ),
     actions: actions.map((action) =>
       slim(action, ["title", "status", "priority", "dueDate", "dreamId"]),
     ),
     todayTodos: todayTodos.map((task) =>
-      slim(task, ["title", "priority", "dueDate", "missedFrom", "dreamId"]),
+      slim(task, ["title", "priority", "dueDate", "missedFrom", "dateChangeReason", "dreamId"]),
     ),
     missedTodos: missedTodos.map((task) =>
-      slim(task, ["title", "priority", "dueDate", "missedFrom"]),
+      slim(task, ["title", "priority", "dueDate", "missedFrom", "dateChangeReason"]),
     ),
+    movedTodos: openTasks
+      .filter((task) => task.dateChangeReason)
+      .map((task) =>
+        slim(task, ["title", "dueDate", "dateChangeReason", "missedFrom"]),
+      ),
     openTaskCount: openTasks.length,
     ideas: ideas.map((idea) => {
       const item = slim(idea, ["title", "description", "status"]);
@@ -101,7 +114,7 @@ const buildUserContext = async (userId) => {
       return item;
     }),
     notes: notes.map((note) => {
-      const item = slim(note, ["content", "isPinned", "linkedType"]);
+      const item = slim(note, ["content", "isPinned", "linkedType", "points"]);
       if (item?.content) {
         item.content = String(item.content).slice(0, 180);
       }

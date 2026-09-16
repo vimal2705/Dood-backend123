@@ -46,6 +46,27 @@ const taskSchema = new mongoose.Schema(
       default: null,
       description: 'Original due date when a missed to-do was rolled to today',
     },
+    dateChangeReason: {
+      type: String,
+      trim: true,
+      maxlength: [200, 'Reason cannot be more than 200 characters'],
+      default: '',
+    },
+    dateChanges: {
+      type: [
+        {
+          from: { type: Date, default: null },
+          to: { type: Date, default: null },
+          reason: {
+            type: String,
+            trim: true,
+            maxlength: [200, 'Reason cannot be more than 200 characters'],
+          },
+          changedAt: { type: Date, default: Date.now },
+        },
+      ],
+      default: [],
+    },
     timeSpent: {
       type: Number,
       default: 0,

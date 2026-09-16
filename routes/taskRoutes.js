@@ -31,6 +31,10 @@ const updateTaskValidation = [
     .optional()
     .isIn(['low', 'medium', 'high']),
   body('dueDate', 'Due date must be a valid date').optional().isISO8601(),
+  body('dateChangeReason', 'Reason must be 3 to 200 characters')
+    .optional({ values: 'falsy' })
+    .trim()
+    .isLength({ min: 3, max: 200 }),
   body('estimatedTime', 'Estimated time must be a positive number').optional().isInt({ min: 0 }),
   body('timeSpent', 'Time spent must be a positive number').optional().isInt({ min: 0 }),
 ];

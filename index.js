@@ -14,9 +14,16 @@ const moneyRoutes = require("./routes/moneyRoutes");
 const aiRoutes = require("./routes/aiRoutes");
 const uploadRoutes = require("./routes/uploadRoutes");
 const reviewRoutes = require("./routes/reviewRoutes");
+const productivityRoutes = require("./routes/productivityRoutes");
+const focusRoutes = require("./routes/focusRoutes");
+const challengeRoutes = require("./routes/challengeRoutes");
 
 // Initialize app
 const app = express();
+
+// Reverse proxy (Railway/Render/etc.) sets X-Forwarded-For.
+// Trust only the first hop so rate-limit can key by client IP.
+app.set("trust proxy", 1);
 
 // Connect to database
 connectDB();
@@ -75,6 +82,9 @@ app.use("/api/money", moneyRoutes);
 app.use("/api/ai", aiLimiter, aiRoutes);
 app.use("/api/uploads", uploadRoutes);
 app.use("/api/review", reviewRoutes);
+app.use("/api/productivity", productivityRoutes);
+app.use("/api/focus-sessions", focusRoutes);
+app.use("/api/challenges", challengeRoutes);
 
 // Health check route
 app.get("/", (req, res) => {

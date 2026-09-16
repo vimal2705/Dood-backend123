@@ -26,6 +26,9 @@ const extractContent = (data) => {
       .join("")
       .trim();
   }
+  if (typeof message.reasoning === "string" && message.reasoning.trim()) {
+    return message.reasoning.trim();
+  }
   return "";
 };
 
@@ -126,7 +129,9 @@ const chatCompletion = async ({
 
   const content = extractContent(data);
   if (!content) {
-    throw new Error("Groq returned no content");
+    const error = new Error("Mentor sent an empty reply. Try again.");
+    error.status = 502;
+    throw error;
   }
 
   return { content, model: data.model || model, raw: data };

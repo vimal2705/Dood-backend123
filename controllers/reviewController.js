@@ -13,8 +13,17 @@ const {
   syncAllDreamProgress,
   listStaleDreams,
 } = require("../utils/dreamProgress");
+const { getOrCreatePreference } = require("../utils/productivity");
 
 const hourNow = () => new Date().getHours();
+const minuteNow = () => new Date().getMinutes();
+
+const shutdownHourReached = (hhmm) => {
+  const match = /^([01]\d|2[0-3]):([0-5]\d)$/.exec(String(hhmm || "18:00"));
+  const hour = match ? Number(match[1]) : 18;
+  const minute = match ? Number(match[2]) : 0;
+  return hourNow() > hour || (hourNow() === hour && minuteNow() >= minute);
+};
 
 exports.getPulse = async (req, res) => {
   try {
@@ -36,7 +45,10 @@ exports.getPulse = async (req, res) => {
       return startOfDay(task.completedDate).getTime() === startOfDay().getTime();
     });
 
-    const eveningDue = hourNow() >= 18 && user?.eveningNoteOn !== today;
+    const pref = await getOrCreatePreference(req.user.id);
+    const eveningDue =
+      shutdownHourReached(pref.eveningShutdownTime || "18:00") &&
+      user?.eveningNoteOn !== today;
     const morningDue = hourNow() < 12 && Boolean(user?.morningNote);
 
     return res.json({

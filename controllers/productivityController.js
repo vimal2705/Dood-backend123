@@ -8,8 +8,10 @@ const {
   applyModeWindow,
   cleanTime,
   clampDuration,
+  clampWeekday,
   isTime,
 } = require("../utils/productivity");
+const { buildNotificationPlan } = require("../utils/notificationPlan");
 const { computeInsights } = require("../utils/productivityInsights");
 const { pickNextWork } = require("../utils/pickNextWork");
 const { hydrateSession } = require("../utils/sessionSerialize");
@@ -79,6 +81,33 @@ exports.updatePreferences = async (req, res) => {
     }
     if (body.smartNotificationsEnabled !== undefined) {
       pref.smartNotificationsEnabled = Boolean(body.smartNotificationsEnabled);
+    }
+    if (body.extraRemindersEnabled !== undefined) {
+      pref.extraRemindersEnabled = Boolean(body.extraRemindersEnabled);
+    }
+    if (body.morningMotivationTime !== undefined) {
+      pref.morningMotivationTime = cleanTime(
+        body.morningMotivationTime,
+        pref.morningMotivationTime || "07:30",
+      );
+    }
+    if (body.dreamWarningTime !== undefined) {
+      pref.dreamWarningTime = cleanTime(
+        body.dreamWarningTime,
+        pref.dreamWarningTime || "11:00",
+      );
+    }
+    if (body.weeklyReviewTime !== undefined) {
+      pref.weeklyReviewTime = cleanTime(
+        body.weeklyReviewTime,
+        pref.weeklyReviewTime || "10:00",
+      );
+    }
+    if (body.weeklyReviewWeekday !== undefined) {
+      pref.weeklyReviewWeekday = clampWeekday(
+        body.weeklyReviewWeekday,
+        pref.weeklyReviewWeekday,
+      );
     }
     if (body.challengeEnabled !== undefined) {
       pref.challengeEnabled = Boolean(body.challengeEnabled);
@@ -209,6 +238,24 @@ exports.getWidgetSnapshot = async (req, res) => {
         updatedAt: new Date().toISOString(),
       },
     });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.getNotificationPlan = async (req, res) => {
+  try {
+    const pref = await getOrCreatePreference(req.user.id);
+    if (req.body?.timezone || req.query?.timezone) {
+      const zone = String(req.body?.timezone || req.query?.timezone || "").slice(0, 64);
+      if (zone && zone !== pref.timezone) {
+        pref.timezone = zone;
+        await pref.save();
+      }
+    }
+    const plan = await buildNotificationPlan(req.user.id, serializePreference(pref));
+    return res.json({ success: true, plan });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ success: false, message: error.message });

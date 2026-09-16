@@ -7,6 +7,7 @@ const {
   getInsights,
   refreshInsights,
   getWidgetSnapshot,
+  getNotificationPlan,
   getCockpit,
 } = require("../controllers/productivityController");
 
@@ -29,12 +30,17 @@ router.patch(
   timeField("preferredEndTime"),
   timeField("peakHour"),
   timeField("eveningShutdownTime"),
+  timeField("morningMotivationTime"),
+  timeField("dreamWarningTime"),
+  timeField("weeklyReviewTime"),
   body("focusDuration").optional().isInt({ min: 10, max: 180 }),
+  body("weeklyReviewWeekday").optional().isInt({ min: 0, max: 6 }),
   updatePreferences,
 );
 router.get("/insights", getInsights);
 router.post("/insights/refresh", refreshInsights);
 router.get("/widget-snapshot", getWidgetSnapshot);
+router.get("/notification-plan", getNotificationPlan);
 router.get("/cockpit", getCockpit);
 
 module.exports = router;

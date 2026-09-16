@@ -43,13 +43,22 @@ const MODE_WINDOWS = {
 
 const DEFAULT_NOTIFICATIONS = {
   missedTodo: true,
-  peakHour: true,
+  peakHour: false,
   dreamWarning: true,
   focusStarting: false,
   focusEnding: true,
   challengeHour: true,
   eveningShutdown: true,
   weeklyReview: true,
+  morningMotivation: true,
+};
+
+const WEEKDAYS = [0, 1, 2, 3, 4, 5, 6];
+
+const clampWeekday = (value, fallback = 0) => {
+  const n = Number(value);
+  if (!Number.isInteger(n) || n < 0 || n > 6) return fallback;
+  return n;
 };
 
 const clampDuration = (value, fallback = 60) => {
@@ -94,6 +103,11 @@ const serializePreference = (doc) => {
     focusDuration: clampDuration(raw.focusDuration),
     eveningShutdownTime: raw.eveningShutdownTime || "18:00",
     smartNotificationsEnabled: Boolean(raw.smartNotificationsEnabled),
+    extraRemindersEnabled: Boolean(raw.extraRemindersEnabled),
+    morningMotivationTime: raw.morningMotivationTime || "07:30",
+    dreamWarningTime: raw.dreamWarningTime || "11:00",
+    weeklyReviewTime: raw.weeklyReviewTime || "10:00",
+    weeklyReviewWeekday: clampWeekday(raw.weeklyReviewWeekday, 0),
     notificationPreferences: {
       ...DEFAULT_NOTIFICATIONS,
       ...(raw.notificationPreferences || {}),
@@ -170,7 +184,9 @@ const accumulateRunning = (session, now = new Date()) => {
 module.exports = {
   MODE_WINDOWS,
   DEFAULT_NOTIFICATIONS,
+  WEEKDAYS,
   TIME_RE,
+  clampWeekday,
   clampDuration,
   isTime,
   cleanTime,

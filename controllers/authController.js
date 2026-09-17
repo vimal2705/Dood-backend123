@@ -1,6 +1,17 @@
 const User = require("../models/User");
+const Dream = require("../models/Dream");
+const Action = require("../models/Action");
+const Task = require("../models/Task");
+const Idea = require("../models/Idea");
+const Note = require("../models/Note");
+const MoneyEntry = require("../models/MoneyEntry");
+const FocusSession = require("../models/FocusSession");
+const ChallengeSession = require("../models/ChallengeSession");
+const ProductivityPreference = require("../models/ProductivityPreference");
+const ProductivityInsight = require("../models/ProductivityInsight");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
+const { DeleteObjectCommand, S3Client } = require("@aws-sdk/client-s3");
 const sendEmail = require("../utils/email");
 const { INTENTS } = require("../utils/intents");
 const { validationResult } = require("express-validator");
@@ -23,6 +34,91 @@ const otpMatches = (storedHash, otp) => {
   const provided = Buffer.from(providedHash);
   if (stored.length !== provided.length) return false;
   return crypto.timingSafeEqual(stored, provided);
+};
+
+const publicBaseUrl = () =>
+  String(process.env.R2_PUBLIC_BASE_URL || "").replace(/\/$/, "");
+
+const r2KeyFromUrl = (url) => {
+  const base = publicBaseUrl();
+  const value = String(url || "");
+  if (!base || !value.startsWith(`${base}/`)) return null;
+  return decodeURIComponent(value.slice(base.length + 1));
+};
+
+const deleteDreamImages = async (urls) => {
+  const accountId = process.env.R2_ACCOUNT_ID;
+  const accessKeyId = process.env.R2_ACCESS_KEY_ID;
+  const secretAccessKey = process.env.R2_SECRET_ACCESS_KEY;
+  const bucket = process.env.R2_BUCKET_NAME;
+  const keys = [...new Set((urls || []).map(r2KeyFromUrl).filter(Boolean))];
+  if (!keys.length || !accountId || !accessKeyId || !secretAccessKey || !bucket) {
+    return;
+  }
+
+  const client = new S3Client({
+    region: "auto",
+    endpoint: `https://${accountId}.r2.cloudflarestorage.com`,
+    credentials: { accessKeyId, secretAccessKey },
+    requestChecksumCalculation: "WHEN_REQUIRED",
+    responseChecksumValidation: "WHEN_REQUIRED",
+  });
+
+  await Promise.all(
+    keys.map((Key) =>
+      client.send(new DeleteObjectCommand({ Bucket: bucket, Key })).catch(() => null),
+    ),
+  );
+};
+
+exports.deleteAccount = async (req, res) => {
+  try {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, errors: errors.array() });
+    }
+
+    const { password } = req.body;
+    const user = await User.findById(req.user.id).select("+password");
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+
+    const matches = await user.matchPassword(password);
+    if (!matches) {
+      return res.status(400).json({
+        success: false,
+        message: "Password is wrong",
+      });
+    }
+
+    const userId = user._id;
+    const dreams = await Dream.find({ userId }).select("image");
+    await deleteDreamImages(dreams.map((dream) => dream.image));
+
+    await Promise.all([
+      Dream.deleteMany({ userId }),
+      Action.deleteMany({ userId }),
+      Task.deleteMany({ userId }),
+      Idea.deleteMany({ userId }),
+      Note.deleteMany({ userId }),
+      MoneyEntry.deleteMany({ userId }),
+      FocusSession.deleteMany({ userId }),
+      ChallengeSession.deleteMany({ userId }),
+      ProductivityPreference.deleteMany({ userId }),
+      ProductivityInsight.deleteMany({ userId }),
+    ]);
+
+    await User.deleteOne({ _id: userId });
+
+    return res.json({
+      success: true,
+      message: "Account deleted",
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
 };
 
 // @desc    Register user

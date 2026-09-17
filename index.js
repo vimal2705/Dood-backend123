@@ -17,6 +17,7 @@ const reviewRoutes = require("./routes/reviewRoutes");
 const productivityRoutes = require("./routes/productivityRoutes");
 const focusRoutes = require("./routes/focusRoutes");
 const challengeRoutes = require("./routes/challengeRoutes");
+const appConfigRoutes = require("./routes/appConfigRoutes");
 
 // Initialize app
 const app = express();
@@ -85,6 +86,13 @@ app.use("/api/review", reviewRoutes);
 app.use("/api/productivity", productivityRoutes);
 app.use("/api/focus-sessions", focusRoutes);
 app.use("/api/challenges", challengeRoutes);
+app.use("/api/app-config", appConfigRoutes);
+
+const { privacyHtml } = require("./utils/privacyPolicy");
+app.get(["/privacy", "/privacy-policy"], (_req, res) => {
+  res.set("Content-Type", "text/html; charset=utf-8");
+  res.status(200).send(privacyHtml());
+});
 
 // Health check route
 app.get("/", (req, res) => {

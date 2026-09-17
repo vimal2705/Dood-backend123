@@ -12,6 +12,7 @@ const {
   getMeWithToken,
   updateProfile,
   changePassword,
+  deleteAccount,
 } = require("../controllers/authController");
 const auth = require("../middleware/auth");
 
@@ -85,6 +86,12 @@ router.put(
     }),
   ],
   changePassword,
+);
+router.delete(
+  "/me",
+  auth,
+  [body("password", "Password is required").notEmpty()],
+  deleteAccount,
 );
 router.post("/me-with-token", getMeWithToken);
 

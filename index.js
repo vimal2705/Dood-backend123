@@ -88,10 +88,14 @@ app.use("/api/focus-sessions", focusRoutes);
 app.use("/api/challenges", challengeRoutes);
 app.use("/api/app-config", appConfigRoutes);
 
-const { privacyHtml } = require("./utils/privacyPolicy");
+const { privacyHtml, supportHtml } = require("./utils/privacyPolicy");
 app.get(["/privacy", "/privacy-policy"], (_req, res) => {
   res.set("Content-Type", "text/html; charset=utf-8");
   res.status(200).send(privacyHtml());
+});
+app.get(["/support", "/help"], (_req, res) => {
+  res.set("Content-Type", "text/html; charset=utf-8");
+  res.status(200).send(supportHtml());
 });
 
 // Health check route

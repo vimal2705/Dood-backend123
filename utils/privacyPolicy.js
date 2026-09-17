@@ -57,12 +57,22 @@ const escapeHtml = value =>
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 
+const supportUrl = () =>
+  String(process.env.SUPPORT_URL || "https://api.motivational.fun/support").trim();
+
+const pageCss = `body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; color: #0F0F10; line-height: 1.55; background: #FFF5EC; }
+    h1 { font-size: 32px; letter-spacing: -0.4px; margin-bottom: 8px; }
+    .meta { color: #6B7280; margin-bottom: 28px; }
+    h2 { font-size: 18px; margin-top: 28px; }
+    p { color: #374151; }
+    a { color: #FF5A3D; }`;
+
 const privacyHtml = () => {
   const contact = escapeHtml(privacyContact());
   const sections = PRIVACY_SECTIONS.map(
     item =>
       `<h2>${escapeHtml(item.title)}</h2><p>${escapeHtml(item.body)}</p>`,
-  ).join('');
+  ).join("");
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -71,12 +81,7 @@ const privacyHtml = () => {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Dood Privacy Policy</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; color: #0F0F10; line-height: 1.55; background: #FFF5EC; }
-    h1 { font-size: 32px; letter-spacing: -0.4px; margin-bottom: 8px; }
-    .meta { color: #6B7280; margin-bottom: 28px; }
-    h2 { font-size: 18px; margin-top: 28px; }
-    p { color: #374151; }
-    a { color: #FF5A3D; }
+    ${pageCss}
   </style>
 </head>
 <body>
@@ -85,6 +90,43 @@ const privacyHtml = () => {
   ${sections}
   <h2>Contact</h2>
   <p>Questions about privacy: <a href="mailto:${contact}">${contact}</a>. You can also delete your account in the Dood app under Profile.</p>
+  <p><a href="/support">Support</a></p>
+</body>
+</html>`;
+};
+
+const supportHtml = () => {
+  const contact = escapeHtml(privacyContact());
+  const policy = escapeHtml(privacyUrl());
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dood Support</title>
+  <style>
+    ${pageCss}
+  </style>
+</head>
+<body>
+  <h1>Dood Support</h1>
+  <p class="meta">Help for the Dood iPhone app. Made by Jarvis.</p>
+
+  <h2>Contact us</h2>
+  <p>Email <a href="mailto:${contact}">${contact}</a>. Include the email on your Dood account and what you were trying to do. We read support mail for account, login, billing questions, and bugs.</p>
+
+  <h2>Sign in and password</h2>
+  <p>Use the email you signed up with. If you forgot your password, open Dood → Login → Forgot Password. We send a reset code to that email.</p>
+
+  <h2>Delete your account</h2>
+  <p>In the app: Profile → Delete account. Enter your password. This permanently removes your account, dreams, actions, to-dos, Brain, money notes, and photos. It cannot be undone. You can also email us and ask us to delete the account for you.</p>
+
+  <h2>What Dood is</h2>
+  <p>A dream is what you pay for to achieve. An action gives you a result. To-dos are for today’s productivity. Dood is a personal planner, not a team tool, bank, or sleep journal.</p>
+
+  <h2>Privacy</h2>
+  <p>Read how we use your data: <a href="${policy}">Privacy Policy</a>.</p>
 </body>
 </html>`;
 };
@@ -95,4 +137,6 @@ module.exports = {
   privacyContact,
   privacyHtml,
   privacyUrl,
+  supportHtml,
+  supportUrl,
 };

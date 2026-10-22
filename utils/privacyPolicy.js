@@ -7,7 +7,7 @@ const PRIVACY_SECTIONS = [
   },
   {
     title: 'What we collect',
-    body: 'When you create an account we collect your name, email, username, phone number, date of birth, password (stored hashed), and optional intent (exam, business, sport, home, or money). While you use Dood we store the content you add: dreams and dream photos, actions, to-dos, ideas, notes, money entries, focus and challenge sessions, evening notes, and notification preferences. We also store a technical account id so your data stays on your account.',
+    body: 'When you create an account we collect your name, email, username, date of birth, password (stored hashed), and optional intent (exam, business, sport, home, or money). Phone number is optional. While you use Dood we store the content you add: dreams and dream photos, actions, to-dos, ideas, notes, money entries, focus and challenge sessions, evening notes, and notification preferences. We also store a technical account id so your data stays on your account.',
   },
   {
     title: 'What we do not collect',

@@ -33,7 +33,6 @@ const userSchema = new mongoose.Schema(
     },
     phoneNumber: {
       type: String,
-      required: [true, "Please provide a phone number"],
       match: [/^\d{10}$/, "Please provide a valid 10-digit phone number"],
     },
     dob: {
@@ -72,6 +71,10 @@ const userSchema = new mongoose.Schema(
     resetPasswordOtpExpire: Date,
     resetPasswordTokenHash: String,
     resetPasswordTokenExpire: Date,
+    refreshTokenHash: {
+      type: String,
+      select: false,
+    },
   },
   { timestamps: true },
 );

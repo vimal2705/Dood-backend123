@@ -16,11 +16,19 @@ const sendEmail = require("../utils/email");
 const { INTENTS } = require("../utils/intents");
 const { validationResult } = require("express-validator");
 
-// Generate JWT Token
-const generateToken = (id) => {
+// Access tokens are short. The refresh token stays valid until sign-out.
+const generateAccessToken = (id) => {
   return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE,
+    expiresIn: "12h",
   });
+};
+
+const issueSession = async (user) => {
+  const token = generateAccessToken(user._id);
+  const refreshToken = crypto.randomBytes(48).toString("hex");
+  user.refreshTokenHash = hashToken(refreshToken);
+  await user.save();
+  return { token, refreshToken };
 };
 
 const createPasswordResetToken = () => crypto.randomBytes(32).toString("hex");
@@ -132,6 +140,7 @@ exports.signup = async (req, res) => {
     }
 
     const { name, email, username, password, phoneNumber, dob, intent } = req.body;
+    const phone = String(phoneNumber || "").trim();
 
     // Check if user already exists
     let user = await User.findOne({ $or: [{ email }, { username }] });
@@ -147,19 +156,18 @@ exports.signup = async (req, res) => {
       email,
       username,
       password,
-      phoneNumber,
+      ...(phone ? { phoneNumber: phone } : {}),
       dob,
       ...(INTENTS.includes(intent) ? { intent } : {}),
     });
 
-    await user.save();
-
-    const token = generateToken(user._id);
+    const { token, refreshToken } = await issueSession(user);
 
     res.status(201).json({
       success: true,
       message: "User registered successfully",
       token,
+      refreshToken,
       user: {
         id: user._id,
         name: user.name,
@@ -204,12 +212,13 @@ exports.login = async (req, res) => {
         .json({ success: false, message: "Invalid credentials" });
     }
 
-    const token = generateToken(user._id);
+    const { token, refreshToken } = await issueSession(user);
 
     res.status(200).json({
       success: true,
       message: "Login successful",
       token,
+      refreshToken,
       user: {
         id: user._id,
         name: user.name,
@@ -396,14 +405,14 @@ exports.resetPassword = async (req, res) => {
     user.password = newPassword;
     user.resetPasswordTokenHash = undefined;
     user.resetPasswordTokenExpire = undefined;
-    await user.save();
 
-    const token = generateToken(user._id);
+    const { token, refreshToken } = await issueSession(user);
 
     res.status(200).json({
       success: true,
       message: "Password reset successful",
       token,
+      refreshToken,
       user: {
         id: user._id,
         name: user.name,
@@ -466,14 +475,14 @@ exports.verifyOtpAndReset = async (req, res) => {
     user.resetPasswordOtpExpire = undefined;
     user.resetPasswordTokenHash = undefined;
     user.resetPasswordTokenExpire = undefined;
-    await user.save();
 
-    const token = generateToken(user._id);
+    const { token, refreshToken } = await issueSession(user);
 
     res.status(200).json({
       success: true,
       message: "Password reset successful",
       token,
+      refreshToken,
       user: {
         id: user._id,
         name: user.name,
@@ -518,7 +527,11 @@ exports.updateProfile = async (req, res) => {
 
     const { name, phoneNumber, intent } = req.body;
     if (name !== undefined) user.name = String(name).trim();
-    if (phoneNumber !== undefined) user.phoneNumber = String(phoneNumber).trim();
+    if (phoneNumber !== undefined) {
+      const phone = String(phoneNumber).trim();
+      if (phone) user.phoneNumber = phone;
+      else user.set("phoneNumber", undefined);
+    }
     if (INTENTS.includes(intent)) {
       user.intent = intent;
     }
@@ -557,8 +570,13 @@ exports.changePassword = async (req, res) => {
     }
 
     user.password = newPassword;
-    await user.save();
-    return res.json({ success: true, message: "Password updated" });
+    const { token, refreshToken } = await issueSession(user);
+    return res.json({
+      success: true,
+      message: "Password updated",
+      token,
+      refreshToken,
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ success: false, message: error.message });
@@ -568,6 +586,51 @@ exports.changePassword = async (req, res) => {
 // @desc    Get current logged in user with token in body
 // @route   POST /api/auth/me-with-token
 // @access  Public
+exports.refresh = async (req, res) => {
+  try {
+    const refreshToken = String(req.body?.refreshToken || "");
+    if (!refreshToken) {
+      return res.status(401).json({ success: false, message: "Session expired" });
+    }
+
+    const user = await User.findOne({
+      refreshTokenHash: hashToken(refreshToken),
+    }).select("+refreshTokenHash");
+    if (!user) {
+      return res.status(401).json({ success: false, message: "Session expired" });
+    }
+
+    const next = await issueSession(user);
+    return res.json({
+      success: true,
+      token: next.token,
+      refreshToken: next.refreshToken,
+      user: {
+        id: user._id,
+        name: user.name,
+        email: user.email,
+        username: user.username,
+        phoneNumber: user.phoneNumber,
+        dob: user.dob,
+        intent: user.intent || null,
+      },
+    });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+exports.logout = async (req, res) => {
+  try {
+    await User.findByIdAndUpdate(req.user.id, { $unset: { refreshTokenHash: 1 } });
+    return res.json({ success: true, message: "Signed out" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ success: false, message: error.message });
+  }
+};
+
 exports.getMeWithToken = async (req, res) => {
   try {
     const { token } = req.body;

@@ -4,6 +4,8 @@ const { body } = require("express-validator");
 const {
   signup,
   login,
+  refresh,
+  logout,
   forgotPassword,
   verifyOtp,
   resetPassword,
@@ -26,7 +28,10 @@ const signupValidation = [
   body("password", "Password must be at least 6 characters").isLength({
     min: 6,
   }),
-  body("phoneNumber", "Phone number must be 10 digits").matches(/^\d{10}$/),
+  body("phoneNumber")
+    .optional({ values: "falsy" })
+    .matches(/^\d{10}$/)
+    .withMessage("Phone number must be 10 digits"),
   body("dob", "Date of birth is required").isISO8601(),
 ];
 
@@ -51,6 +56,8 @@ const resetPasswordValidation = [
 // Routes
 router.post("/signup", signupValidation, signup);
 router.post("/login", loginValidation, login);
+router.post("/refresh", refresh);
+router.post("/logout", auth, logout);
 router.post("/forgot-password", forgotPassword);
 router.post("/verify-otp", verifyOtpValidation, verifyOtp);
 router.post("/reset-password", resetPasswordValidation, resetPassword);
@@ -71,7 +78,13 @@ router.put(
   auth,
   [
     body("name").optional().trim().notEmpty(),
-    body("phoneNumber").optional().matches(/^\d{10}$/),
+    body("phoneNumber")
+      .optional({ values: "null" })
+      .custom(value => {
+        const phone = String(value ?? "").trim();
+        return phone === "" || /^\d{10}$/.test(phone);
+      })
+      .withMessage("Phone number must be 10 digits"),
     body("intent").optional(),
   ],
   updateProfile,

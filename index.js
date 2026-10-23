@@ -18,6 +18,7 @@ const productivityRoutes = require("./routes/productivityRoutes");
 const focusRoutes = require("./routes/focusRoutes");
 const challengeRoutes = require("./routes/challengeRoutes");
 const appConfigRoutes = require("./routes/appConfigRoutes");
+const reelRoutes = require("./routes/reelRoutes");
 
 // Initialize app
 const app = express();
@@ -87,6 +88,7 @@ app.use("/api/productivity", productivityRoutes);
 app.use("/api/focus-sessions", focusRoutes);
 app.use("/api/challenges", challengeRoutes);
 app.use("/api/app-config", appConfigRoutes);
+app.use("/api/reels", reelRoutes);
 
 const { privacyHtml, supportHtml } = require("./utils/privacyPolicy");
 app.get(["/privacy", "/privacy-policy"], (_req, res) => {

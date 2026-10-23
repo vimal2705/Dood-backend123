@@ -9,6 +9,7 @@ const FocusSession = require("../models/FocusSession");
 const ChallengeSession = require("../models/ChallengeSession");
 const ProductivityPreference = require("../models/ProductivityPreference");
 const ProductivityInsight = require("../models/ProductivityInsight");
+const Reel = require("../models/Reel");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const { DeleteObjectCommand, S3Client } = require("@aws-sdk/client-s3");
@@ -115,6 +116,7 @@ exports.deleteAccount = async (req, res) => {
       ChallengeSession.deleteMany({ userId }),
       ProductivityPreference.deleteMany({ userId }),
       ProductivityInsight.deleteMany({ userId }),
+      Reel.deleteMany({ userId }),
     ]);
 
     await User.deleteOne({ _id: userId });

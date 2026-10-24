@@ -10,6 +10,7 @@ const ChallengeSession = require("../models/ChallengeSession");
 const ProductivityPreference = require("../models/ProductivityPreference");
 const ProductivityInsight = require("../models/ProductivityInsight");
 const Reel = require("../models/Reel");
+const { deleteByUrls } = require("../utils/r2");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const { DeleteObjectCommand, S3Client } = require("@aws-sdk/client-s3");
@@ -104,6 +105,9 @@ exports.deleteAccount = async (req, res) => {
     const userId = user._id;
     const dreams = await Dream.find({ userId }).select("image");
     await deleteDreamImages(dreams.map((dream) => dream.image));
+
+    const reels = await Reel.find({ userId }).select("url");
+    await deleteByUrls(reels.map((reel) => reel.url));
 
     await Promise.all([
       Dream.deleteMany({ userId }),

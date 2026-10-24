@@ -108,9 +108,13 @@ app.get("/", (req, res) => {
 // Error handling middleware
 app.use((err, req, res, next) => {
   if (err?.code === "LIMIT_FILE_SIZE") {
-    return res.status(400).json({ success: false, message: "Image is too large (max 6MB)" });
+    const message =
+      err.field === "video"
+        ? "Video is too large (max 40MB)"
+        : "Image is too large (max 6MB)";
+    return res.status(400).json({ success: false, message });
   }
-  if (err?.message === "Only image files are allowed") {
+  if (err?.message === "Only image files are allowed" || err?.message === "Only video files are allowed") {
     return res.status(400).json({ success: false, message: err.message });
   }
   console.error(err.stack);

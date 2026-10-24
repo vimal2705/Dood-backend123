@@ -10,7 +10,7 @@ const reelSchema = new mongoose.Schema(
     },
     platform: {
       type: String,
-      enum: ["instagram", "youtube", "link"],
+      enum: ["instagram", "youtube", "link", "file"],
       required: true,
     },
     url: {
@@ -35,6 +35,12 @@ const reelSchema = new mongoose.Schema(
       type: String,
       trim: true,
       maxlength: 40,
+      default: "",
+    },
+    contentType: {
+      type: String,
+      trim: true,
+      maxlength: 80,
       default: "",
     },
   },

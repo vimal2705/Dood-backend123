@@ -1,4 +1,4 @@
-const { MENTOR_SYSTEM_PROMPT } = require("./aiMentorPrompt");
+const { mentorSystemPrompt } = require("./aiMentorPrompt");
 
 const parseJsonContent = (text) => {
   if (!text || typeof text !== "string") {
@@ -137,7 +137,7 @@ const chatCompletion = async ({
   return { content, model: data.model || model, raw: data };
 };
 
-const mentorMessages = (history, userPayload) => {
+const mentorMessages = (history, userPayload, idols) => {
   const safeHistory = (Array.isArray(history) ? history : [])
     .filter(
       (item) =>
@@ -153,7 +153,7 @@ const mentorMessages = (history, userPayload) => {
     }));
 
   return [
-    { role: "system", content: MENTOR_SYSTEM_PROMPT },
+    { role: "system", content: mentorSystemPrompt(idols) },
     ...safeHistory,
     { role: "user", content: userPayload },
   ];

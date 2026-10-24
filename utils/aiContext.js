@@ -56,7 +56,7 @@ const buildUserContext = async (userId) => {
       userId,
       happenedAt: { $gte: start, $lte: end },
     }),
-    User.findById(userId).select("name intent"),
+    User.findById(userId).select("name intent idols"),
   ]);
 
   const todayStart = new Date();
@@ -78,6 +78,7 @@ const buildUserContext = async (userId) => {
     name: user?.name || "",
     intent: user?.intent || "",
     intentCoach: intentCoachLine(user?.intent) || "",
+    idols: user?.idols || [],
     dreams: dreams.map((dream) =>
       slim(dream, [
         "title",

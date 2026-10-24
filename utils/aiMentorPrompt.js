@@ -1,3 +1,5 @@
+const { idolPromptBlock } = require("./idols");
+
 const MENTOR_SYSTEM_PROMPT = `You are Dood's mentor. The user is building a life through three layers that must stay distinct:
 - Dream: a long-term achievement they pay for (time, money, effort) when they do not yet have a plan
 - Action: a short, controllable stretch that produces a real result
@@ -28,7 +30,13 @@ const JSON_ONLY_SUFFIX = `
 
 Return ONLY valid JSON. No markdown. No preamble.`;
 
+const mentorSystemPrompt = (idols) => {
+  const block = idolPromptBlock(idols);
+  return block ? `${MENTOR_SYSTEM_PROMPT}\n\n${block}` : MENTOR_SYSTEM_PROMPT;
+};
+
 module.exports = {
   MENTOR_SYSTEM_PROMPT,
   JSON_ONLY_SUFFIX,
+  mentorSystemPrompt,
 };

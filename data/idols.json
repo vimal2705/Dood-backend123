@@ -1,0 +1,3917 @@
+[
+  {
+    "id": "mandela",
+    "name": "Nelson Mandela",
+    "group": "leader"
+  },
+  {
+    "id": "mahatma-gandhi",
+    "name": "Mahatma Gandhi",
+    "group": "leader"
+  },
+  {
+    "id": "martin-luther-king-jr",
+    "name": "Martin Luther King Jr.",
+    "group": "leader"
+  },
+  {
+    "id": "abraham-lincoln",
+    "name": "Abraham Lincoln",
+    "group": "leader"
+  },
+  {
+    "id": "winston-churchill",
+    "name": "Winston Churchill",
+    "group": "leader"
+  },
+  {
+    "id": "barack-obama",
+    "name": "Barack Obama",
+    "group": "leader"
+  },
+  {
+    "id": "michelle-obama",
+    "name": "Michelle Obama",
+    "group": "leader"
+  },
+  {
+    "id": "joe-biden",
+    "name": "Joe Biden",
+    "group": "leader"
+  },
+  {
+    "id": "donald-trump",
+    "name": "Donald Trump",
+    "group": "leader"
+  },
+  {
+    "id": "kamala-harris",
+    "name": "Kamala Harris",
+    "group": "leader"
+  },
+  {
+    "id": "hillary-clinton",
+    "name": "Hillary Clinton",
+    "group": "leader"
+  },
+  {
+    "id": "angela-merkel",
+    "name": "Angela Merkel",
+    "group": "leader"
+  },
+  {
+    "id": "jacinda-ardern",
+    "name": "Jacinda Ardern",
+    "group": "leader"
+  },
+  {
+    "id": "margaret-thatcher",
+    "name": "Margaret Thatcher",
+    "group": "leader"
+  },
+  {
+    "id": "golda-meir",
+    "name": "Golda Meir",
+    "group": "leader"
+  },
+  {
+    "id": "indira-gandhi",
+    "name": "Indira Gandhi",
+    "group": "leader"
+  },
+  {
+    "id": "queen-elizabeth-ii",
+    "name": "Queen Elizabeth II",
+    "group": "leader"
+  },
+  {
+    "id": "king-charles-iii",
+    "name": "King Charles III",
+    "group": "leader"
+  },
+  {
+    "id": "lee-kuan-yew",
+    "name": "Lee Kuan Yew",
+    "group": "leader"
+  },
+  {
+    "id": "lee-hsien-loong",
+    "name": "Lee Hsien Loong",
+    "group": "leader"
+  },
+  {
+    "id": "lawrence-wong",
+    "name": "Lawrence Wong",
+    "group": "leader"
+  },
+  {
+    "id": "narendra-modi",
+    "name": "Narendra Modi",
+    "group": "leader"
+  },
+  {
+    "id": "atal-bihari-vajpayee",
+    "name": "Atal Bihari Vajpayee",
+    "group": "leader"
+  },
+  {
+    "id": "jawaharlal-nehru",
+    "name": "Jawaharlal Nehru",
+    "group": "leader"
+  },
+  {
+    "id": "sardar-vallabhbhai-patel",
+    "name": "Sardar Vallabhbhai Patel",
+    "group": "leader"
+  },
+  {
+    "id": "subhas-chandra-bose",
+    "name": "Subhas Chandra Bose",
+    "group": "leader"
+  },
+  {
+    "id": "apj-abdul-kalam",
+    "name": "APJ Abdul Kalam",
+    "group": "leader"
+  },
+  {
+    "id": "manmohan-singh",
+    "name": "Manmohan Singh",
+    "group": "leader"
+  },
+  {
+    "id": "pratibha-patil",
+    "name": "Pratibha Patil",
+    "group": "leader"
+  },
+  {
+    "id": "droupadi-murmu",
+    "name": "Droupadi Murmu",
+    "group": "leader"
+  },
+  {
+    "id": "emmanuel-macron",
+    "name": "Emmanuel Macron",
+    "group": "leader"
+  },
+  {
+    "id": "olaf-scholz",
+    "name": "Olaf Scholz",
+    "group": "leader"
+  },
+  {
+    "id": "ursula-von-der-leyen",
+    "name": "Ursula von der Leyen",
+    "group": "leader"
+  },
+  {
+    "id": "christine-lagarde",
+    "name": "Christine Lagarde",
+    "group": "leader"
+  },
+  {
+    "id": "antonio-guterres",
+    "name": "António Guterres",
+    "group": "leader"
+  },
+  {
+    "id": "kofi-annan",
+    "name": "Kofi Annan",
+    "group": "leader"
+  },
+  {
+    "id": "ban-ki-moon",
+    "name": "Ban Ki-moon",
+    "group": "leader"
+  },
+  {
+    "id": "malala-yousafzai",
+    "name": "Malala Yousafzai",
+    "group": "leader"
+  },
+  {
+    "id": "wangari-maathai",
+    "name": "Wangari Maathai",
+    "group": "leader"
+  },
+  {
+    "id": "ellen-johnson-sirleaf",
+    "name": "Ellen Johnson Sirleaf",
+    "group": "leader"
+  },
+  {
+    "id": "desmond-tutu",
+    "name": "Desmond Tutu",
+    "group": "leader"
+  },
+  {
+    "id": "cyril-ramaphosa",
+    "name": "Cyril Ramaphosa",
+    "group": "leader"
+  },
+  {
+    "id": "paul-kagame",
+    "name": "Paul Kagame",
+    "group": "leader"
+  },
+  {
+    "id": "aliko-dangote",
+    "name": "Aliko Dangote",
+    "group": "leader"
+  },
+  {
+    "id": "volodymyr-zelenskyy",
+    "name": "Volodymyr Zelenskyy",
+    "group": "leader"
+  },
+  {
+    "id": "justin-trudeau",
+    "name": "Justin Trudeau",
+    "group": "leader"
+  },
+  {
+    "id": "rishi-sunak",
+    "name": "Rishi Sunak",
+    "group": "leader"
+  },
+  {
+    "id": "keir-starmer",
+    "name": "Keir Starmer",
+    "group": "leader"
+  },
+  {
+    "id": "giorgia-meloni",
+    "name": "Giorgia Meloni",
+    "group": "leader"
+  },
+  {
+    "id": "pedro-sanchez",
+    "name": "Pedro Sánchez",
+    "group": "leader"
+  },
+  {
+    "id": "mark-rutte",
+    "name": "Mark Rutte",
+    "group": "leader"
+  },
+  {
+    "id": "donald-tusk",
+    "name": "Donald Tusk",
+    "group": "leader"
+  },
+  {
+    "id": "andrzej-duda",
+    "name": "Andrzej Duda",
+    "group": "leader"
+  },
+  {
+    "id": "luiz-inacio-lula-da-silva",
+    "name": "Luiz Inácio Lula da Silva",
+    "group": "leader"
+  },
+  {
+    "id": "jair-bolsonaro",
+    "name": "Jair Bolsonaro",
+    "group": "leader"
+  },
+  {
+    "id": "gabriel-boric",
+    "name": "Gabriel Boric",
+    "group": "leader"
+  },
+  {
+    "id": "javier-milei",
+    "name": "Javier Milei",
+    "group": "leader"
+  },
+  {
+    "id": "claudia-sheinbaum",
+    "name": "Claudia Sheinbaum",
+    "group": "leader"
+  },
+  {
+    "id": "andres-manuel-lopez-obrador",
+    "name": "Andrés Manuel López Obrador",
+    "group": "leader"
+  },
+  {
+    "id": "justin-welby",
+    "name": "Justin Welby",
+    "group": "leader"
+  },
+  {
+    "id": "pope-francis",
+    "name": "Pope Francis",
+    "group": "leader"
+  },
+  {
+    "id": "xi-jinping",
+    "name": "Xi Jinping",
+    "group": "leader"
+  },
+  {
+    "id": "shinzo-abe",
+    "name": "Shinzo Abe",
+    "group": "leader"
+  },
+  {
+    "id": "fumio-kishida",
+    "name": "Fumio Kishida",
+    "group": "leader"
+  },
+  {
+    "id": "yoon-suk-yeol",
+    "name": "Yoon Suk Yeol",
+    "group": "leader"
+  },
+  {
+    "id": "park-geun-hye",
+    "name": "Park Geun-hye",
+    "group": "leader"
+  },
+  {
+    "id": "tsai-ing-wen",
+    "name": "Tsai Ing-wen",
+    "group": "leader"
+  },
+  {
+    "id": "joko-widodo",
+    "name": "Joko Widodo",
+    "group": "leader"
+  },
+  {
+    "id": "prabowo-subianto",
+    "name": "Prabowo Subianto",
+    "group": "leader"
+  },
+  {
+    "id": "anwar-ibrahim",
+    "name": "Anwar Ibrahim",
+    "group": "leader"
+  },
+  {
+    "id": "mahathir-mohamad",
+    "name": "Mahathir Mohamad",
+    "group": "leader"
+  },
+  {
+    "id": "ferdinand-marcos-jr",
+    "name": "Ferdinand Marcos Jr.",
+    "group": "leader"
+  },
+  {
+    "id": "sheikh-hasina",
+    "name": "Sheikh Hasina",
+    "group": "leader"
+  },
+  {
+    "id": "imran-khan",
+    "name": "Imran Khan",
+    "group": "leader"
+  },
+  {
+    "id": "benazir-bhutto",
+    "name": "Benazir Bhutto",
+    "group": "leader"
+  },
+  {
+    "id": "muhammad-ali-jinnah",
+    "name": "Muhammad Ali Jinnah",
+    "group": "leader"
+  },
+  {
+    "id": "shehbaz-sharif",
+    "name": "Shehbaz Sharif",
+    "group": "leader"
+  },
+  {
+    "id": "benjamin-netanyahu",
+    "name": "Benjamin Netanyahu",
+    "group": "leader"
+  },
+  {
+    "id": "yitzhak-rabin",
+    "name": "Yitzhak Rabin",
+    "group": "leader"
+  },
+  {
+    "id": "shimon-peres",
+    "name": "Shimon Peres",
+    "group": "leader"
+  },
+  {
+    "id": "king-abdullah-ii",
+    "name": "King Abdullah II",
+    "group": "leader"
+  },
+  {
+    "id": "mohammed-bin-salman",
+    "name": "Mohammed bin Salman",
+    "group": "leader"
+  },
+  {
+    "id": "recep-tayyip-erdogan",
+    "name": "Recep Tayyip Erdoğan",
+    "group": "leader"
+  },
+  {
+    "id": "mustafa-kemal-ataturk",
+    "name": "Mustafa Kemal Atatürk",
+    "group": "leader"
+  },
+  {
+    "id": "abdel-fattah-el-sisi",
+    "name": "Abdel Fattah el-Sisi",
+    "group": "leader"
+  },
+  {
+    "id": "frederic-passy",
+    "name": "Frédéric Passy",
+    "group": "leader"
+  },
+  {
+    "id": "eleanor-roosevelt",
+    "name": "Eleanor Roosevelt",
+    "group": "leader"
+  },
+  {
+    "id": "franklin-d-roosevelt",
+    "name": "Franklin D. Roosevelt",
+    "group": "leader"
+  },
+  {
+    "id": "theodore-roosevelt",
+    "name": "Theodore Roosevelt",
+    "group": "leader"
+  },
+  {
+    "id": "john-f-kennedy",
+    "name": "John F. Kennedy",
+    "group": "leader"
+  },
+  {
+    "id": "lyndon-b-johnson",
+    "name": "Lyndon B. Johnson",
+    "group": "leader"
+  },
+  {
+    "id": "ronald-reagan",
+    "name": "Ronald Reagan",
+    "group": "leader"
+  },
+  {
+    "id": "george-h-w-bush",
+    "name": "George H. W. Bush",
+    "group": "leader"
+  },
+  {
+    "id": "george-w-bush",
+    "name": "George W. Bush",
+    "group": "leader"
+  },
+  {
+    "id": "bill-clinton",
+    "name": "Bill Clinton",
+    "group": "leader"
+  },
+  {
+    "id": "jimmy-carter",
+    "name": "Jimmy Carter",
+    "group": "leader"
+  },
+  {
+    "id": "dwight-d-eisenhower",
+    "name": "Dwight D. Eisenhower",
+    "group": "leader"
+  },
+  {
+    "id": "harry-s-truman",
+    "name": "Harry S. Truman",
+    "group": "leader"
+  },
+  {
+    "id": "woodrow-wilson",
+    "name": "Woodrow Wilson",
+    "group": "leader"
+  },
+  {
+    "id": "thomas-jefferson",
+    "name": "Thomas Jefferson",
+    "group": "leader"
+  },
+  {
+    "id": "george-washington",
+    "name": "George Washington",
+    "group": "leader"
+  },
+  {
+    "id": "benjamin-franklin",
+    "name": "Benjamin Franklin",
+    "group": "leader"
+  },
+  {
+    "id": "frederick-douglass",
+    "name": "Frederick Douglass",
+    "group": "leader"
+  },
+  {
+    "id": "harriet-tubman",
+    "name": "Harriet Tubman",
+    "group": "leader"
+  },
+  {
+    "id": "sojourner-truth",
+    "name": "Sojourner Truth",
+    "group": "leader"
+  },
+  {
+    "id": "rosa-parks",
+    "name": "Rosa Parks",
+    "group": "leader"
+  },
+  {
+    "id": "cesar-chavez",
+    "name": "Cesar Chavez",
+    "group": "leader"
+  },
+  {
+    "id": "rigoberta-menchu",
+    "name": "Rigoberta Menchú",
+    "group": "leader"
+  },
+  {
+    "id": "aung-san-suu-kyi",
+    "name": "Aung San Suu Kyi",
+    "group": "leader"
+  },
+  {
+    "id": "vaclav-havel",
+    "name": "Vaclav Havel",
+    "group": "leader"
+  },
+  {
+    "id": "lech-wa-esa",
+    "name": "Lech Wałęsa",
+    "group": "leader"
+  },
+  {
+    "id": "mikhail-gorbachev",
+    "name": "Mikhail Gorbachev",
+    "group": "leader"
+  },
+  {
+    "id": "helmut-kohl",
+    "name": "Helmut Kohl",
+    "group": "leader"
+  },
+  {
+    "id": "willy-brandt",
+    "name": "Willy Brandt",
+    "group": "leader"
+  },
+  {
+    "id": "konrad-adenauer",
+    "name": "Konrad Adenauer",
+    "group": "leader"
+  },
+  {
+    "id": "charles-de-gaulle",
+    "name": "Charles de Gaulle",
+    "group": "leader"
+  },
+  {
+    "id": "francois-mitterrand",
+    "name": "François Mitterrand",
+    "group": "leader"
+  },
+  {
+    "id": "jacques-chirac",
+    "name": "Jacques Chirac",
+    "group": "leader"
+  },
+  {
+    "id": "nicolas-sarkozy",
+    "name": "Nicolas Sarkozy",
+    "group": "leader"
+  },
+  {
+    "id": "francois-hollande",
+    "name": "François Hollande",
+    "group": "leader"
+  },
+  {
+    "id": "tony-blair",
+    "name": "Tony Blair",
+    "group": "leader"
+  },
+  {
+    "id": "gordon-brown",
+    "name": "Gordon Brown",
+    "group": "leader"
+  },
+  {
+    "id": "david-cameron",
+    "name": "David Cameron",
+    "group": "leader"
+  },
+  {
+    "id": "theresa-may",
+    "name": "Theresa May",
+    "group": "leader"
+  },
+  {
+    "id": "boris-johnson",
+    "name": "Boris Johnson",
+    "group": "leader"
+  },
+  {
+    "id": "liz-truss",
+    "name": "Liz Truss",
+    "group": "leader"
+  },
+  {
+    "id": "pierre-trudeau",
+    "name": "Pierre Trudeau",
+    "group": "leader"
+  },
+  {
+    "id": "lester-b-pearson",
+    "name": "Lester B. Pearson",
+    "group": "leader"
+  },
+  {
+    "id": "haile-selassie",
+    "name": "Haile Selassie",
+    "group": "leader"
+  },
+  {
+    "id": "kwame-nkrumah",
+    "name": "Kwame Nkrumah",
+    "group": "leader"
+  },
+  {
+    "id": "jomo-kenyatta",
+    "name": "Jomo Kenyatta",
+    "group": "leader"
+  },
+  {
+    "id": "julius-nyerere",
+    "name": "Julius Nyerere",
+    "group": "leader"
+  },
+  {
+    "id": "thomas-sankara",
+    "name": "Thomas Sankara",
+    "group": "leader"
+  },
+  {
+    "id": "patrice-lumumba",
+    "name": "Patrice Lumumba",
+    "group": "leader"
+  },
+  {
+    "id": "sam-nujoma",
+    "name": "Sam Nujoma",
+    "group": "leader"
+  },
+  {
+    "id": "robert-mugabe",
+    "name": "Robert Mugabe",
+    "group": "leader"
+  },
+  {
+    "id": "olusegun-obasanjo",
+    "name": "Olusegun Obasanjo",
+    "group": "leader"
+  },
+  {
+    "id": "goodluck-jonathan",
+    "name": "Goodluck Jonathan",
+    "group": "leader"
+  },
+  {
+    "id": "muhammadu-buhari",
+    "name": "Muhammadu Buhari",
+    "group": "leader"
+  },
+  {
+    "id": "bola-tinubu",
+    "name": "Bola Tinubu",
+    "group": "leader"
+  },
+  {
+    "id": "nana-akufo-addo",
+    "name": "Nana Akufo-Addo",
+    "group": "leader"
+  },
+  {
+    "id": "abiy-ahmed",
+    "name": "Abiy Ahmed",
+    "group": "leader"
+  },
+  {
+    "id": "william-ruto",
+    "name": "William Ruto",
+    "group": "leader"
+  },
+  {
+    "id": "uhuru-kenyatta",
+    "name": "Uhuru Kenyatta",
+    "group": "leader"
+  },
+  {
+    "id": "raila-odinga",
+    "name": "Raila Odinga",
+    "group": "leader"
+  },
+  {
+    "id": "hakainde-hichilema",
+    "name": "Hakainde Hichilema",
+    "group": "leader"
+  },
+  {
+    "id": "emmerson-mnangagwa",
+    "name": "Emmerson Mnangagwa",
+    "group": "leader"
+  },
+  {
+    "id": "f-w-de-klerk",
+    "name": "F. W. de Klerk",
+    "group": "leader"
+  },
+  {
+    "id": "thabo-mbeki",
+    "name": "Thabo Mbeki",
+    "group": "leader"
+  },
+  {
+    "id": "kgalema-motlanthe",
+    "name": "Kgalema Motlanthe",
+    "group": "leader"
+  },
+  {
+    "id": "jacob-zuma",
+    "name": "Jacob Zuma",
+    "group": "leader"
+  },
+  {
+    "id": "elon-musk",
+    "name": "Elon Musk",
+    "group": "business"
+  },
+  {
+    "id": "mukesh-ambani",
+    "name": "Mukesh Ambani",
+    "group": "business"
+  },
+  {
+    "id": "gautam-adani",
+    "name": "Gautam Adani",
+    "group": "business"
+  },
+  {
+    "id": "ratan-tata",
+    "name": "Ratan Tata",
+    "group": "business"
+  },
+  {
+    "id": "n-r-narayana-murthy",
+    "name": "N. R. Narayana Murthy",
+    "group": "business"
+  },
+  {
+    "id": "nandan-nilekani",
+    "name": "Nandan Nilekani",
+    "group": "business"
+  },
+  {
+    "id": "azim-premji",
+    "name": "Azim Premji",
+    "group": "business"
+  },
+  {
+    "id": "shiv-nadar",
+    "name": "Shiv Nadar",
+    "group": "business"
+  },
+  {
+    "id": "anand-mahindra",
+    "name": "Anand Mahindra",
+    "group": "business"
+  },
+  {
+    "id": "kumar-mangalam-birla",
+    "name": "Kumar Mangalam Birla",
+    "group": "business"
+  },
+  {
+    "id": "lakshmi-mittal",
+    "name": "Lakshmi Mittal",
+    "group": "business"
+  },
+  {
+    "id": "uday-kotak",
+    "name": "Uday Kotak",
+    "group": "business"
+  },
+  {
+    "id": "radhakishan-damani",
+    "name": "Radhakishan Damani",
+    "group": "business"
+  },
+  {
+    "id": "kiran-mazumdar-shaw",
+    "name": "Kiran Mazumdar-Shaw",
+    "group": "business"
+  },
+  {
+    "id": "falguni-nayar",
+    "name": "Falguni Nayar",
+    "group": "business"
+  },
+  {
+    "id": "harsh-mariwala",
+    "name": "Harsh Mariwala",
+    "group": "business"
+  },
+  {
+    "id": "sunil-mittal",
+    "name": "Sunil Mittal",
+    "group": "business"
+  },
+  {
+    "id": "sachin-bansal",
+    "name": "Sachin Bansal",
+    "group": "business"
+  },
+  {
+    "id": "binny-bansal",
+    "name": "Binny Bansal",
+    "group": "business"
+  },
+  {
+    "id": "vijay-shekhar-sharma",
+    "name": "Vijay Shekhar Sharma",
+    "group": "business"
+  },
+  {
+    "id": "bhavish-aggarwal",
+    "name": "Bhavish Aggarwal",
+    "group": "business"
+  },
+  {
+    "id": "nithin-kamath",
+    "name": "Nithin Kamath",
+    "group": "business"
+  },
+  {
+    "id": "deepinder-goyal",
+    "name": "Deepinder Goyal",
+    "group": "business"
+  },
+  {
+    "id": "kunal-shah",
+    "name": "Kunal Shah",
+    "group": "business"
+  },
+  {
+    "id": "peyush-bansal",
+    "name": "Peyush Bansal",
+    "group": "business"
+  },
+  {
+    "id": "girish-mathrubootham",
+    "name": "Girish Mathrubootham",
+    "group": "business"
+  },
+  {
+    "id": "byju-raveendran",
+    "name": "Byju Raveendran",
+    "group": "business"
+  },
+  {
+    "id": "sriharsha-majety",
+    "name": "Sriharsha Majety",
+    "group": "business"
+  },
+  {
+    "id": "albinder-dhindsa",
+    "name": "Albinder Dhindsa",
+    "group": "business"
+  },
+  {
+    "id": "ritesh-agarwal",
+    "name": "Ritesh Agarwal",
+    "group": "business"
+  },
+  {
+    "id": "kunal-bahl",
+    "name": "Kunal Bahl",
+    "group": "business"
+  },
+  {
+    "id": "rohit-bansal",
+    "name": "Rohit Bansal",
+    "group": "business"
+  },
+  {
+    "id": "sameer-nigam",
+    "name": "Sameer Nigam",
+    "group": "business"
+  },
+  {
+    "id": "jeff-bezos",
+    "name": "Jeff Bezos",
+    "group": "business"
+  },
+  {
+    "id": "bill-gates",
+    "name": "Bill Gates",
+    "group": "business"
+  },
+  {
+    "id": "buffett",
+    "name": "Warren Buffett",
+    "group": "business"
+  },
+  {
+    "id": "mark-zuckerberg",
+    "name": "Mark Zuckerberg",
+    "group": "business"
+  },
+  {
+    "id": "larry-page",
+    "name": "Larry Page",
+    "group": "business"
+  },
+  {
+    "id": "sergey-brin",
+    "name": "Sergey Brin",
+    "group": "business"
+  },
+  {
+    "id": "steve-jobs",
+    "name": "Steve Jobs",
+    "group": "business"
+  },
+  {
+    "id": "steve-wozniak",
+    "name": "Steve Wozniak",
+    "group": "business"
+  },
+  {
+    "id": "tim-cook",
+    "name": "Tim Cook",
+    "group": "business"
+  },
+  {
+    "id": "satya-nadella",
+    "name": "Satya Nadella",
+    "group": "business"
+  },
+  {
+    "id": "sundar-pichai",
+    "name": "Sundar Pichai",
+    "group": "business"
+  },
+  {
+    "id": "jensen-huang",
+    "name": "Jensen Huang",
+    "group": "business"
+  },
+  {
+    "id": "lisa-su",
+    "name": "Lisa Su",
+    "group": "business"
+  },
+  {
+    "id": "reed-hastings",
+    "name": "Reed Hastings",
+    "group": "business"
+  },
+  {
+    "id": "marc-benioff",
+    "name": "Marc Benioff",
+    "group": "business"
+  },
+  {
+    "id": "safra-catz",
+    "name": "Safra Catz",
+    "group": "business"
+  },
+  {
+    "id": "sandberg",
+    "name": "Sheryl Sandberg",
+    "group": "business"
+  },
+  {
+    "id": "indra-nooyi",
+    "name": "Indra Nooyi",
+    "group": "business"
+  },
+  {
+    "id": "ginni-rometty",
+    "name": "Ginni Rometty",
+    "group": "business"
+  },
+  {
+    "id": "mary-barra",
+    "name": "Mary Barra",
+    "group": "business"
+  },
+  {
+    "id": "adena-friedman",
+    "name": "Adena Friedman",
+    "group": "business"
+  },
+  {
+    "id": "jane-fraser",
+    "name": "Jane Fraser",
+    "group": "business"
+  },
+  {
+    "id": "rosalind-brewer",
+    "name": "Rosalind Brewer",
+    "group": "business"
+  },
+  {
+    "id": "abigail-johnson",
+    "name": "Abigail Johnson",
+    "group": "business"
+  },
+  {
+    "id": "ruth-porat",
+    "name": "Ruth Porat",
+    "group": "business"
+  },
+  {
+    "id": "susan-wojcicki",
+    "name": "Susan Wojcicki",
+    "group": "business"
+  },
+  {
+    "id": "marissa-mayer",
+    "name": "Marissa Mayer",
+    "group": "business"
+  },
+  {
+    "id": "meg-whitman",
+    "name": "Meg Whitman",
+    "group": "business"
+  },
+  {
+    "id": "carly-fiorina",
+    "name": "Carly Fiorina",
+    "group": "business"
+  },
+  {
+    "id": "ursula-burns",
+    "name": "Ursula Burns",
+    "group": "business"
+  },
+  {
+    "id": "anne-mulcahy",
+    "name": "Anne Mulcahy",
+    "group": "business"
+  },
+  {
+    "id": "sara-blakely",
+    "name": "Sara Blakely",
+    "group": "business"
+  },
+  {
+    "id": "tory-burch",
+    "name": "Tory Burch",
+    "group": "business"
+  },
+  {
+    "id": "oprah-winfrey",
+    "name": "Oprah Winfrey",
+    "group": "business"
+  },
+  {
+    "id": "rihanna",
+    "name": "Rihanna",
+    "group": "business"
+  },
+  {
+    "id": "kylie-jenner",
+    "name": "Kylie Jenner",
+    "group": "business"
+  },
+  {
+    "id": "kim-kardashian",
+    "name": "Kim Kardashian",
+    "group": "business"
+  },
+  {
+    "id": "gary-vaynerchuk",
+    "name": "Gary Vaynerchuk",
+    "group": "business"
+  },
+  {
+    "id": "naval-ravikant",
+    "name": "Naval Ravikant",
+    "group": "business"
+  },
+  {
+    "id": "paul-graham",
+    "name": "Paul Graham",
+    "group": "business"
+  },
+  {
+    "id": "sam-altman",
+    "name": "Sam Altman",
+    "group": "business"
+  },
+  {
+    "id": "patrick-collison",
+    "name": "Patrick Collison",
+    "group": "business"
+  },
+  {
+    "id": "john-collison",
+    "name": "John Collison",
+    "group": "business"
+  },
+  {
+    "id": "brian-chesky",
+    "name": "Brian Chesky",
+    "group": "business"
+  },
+  {
+    "id": "joe-gebbia",
+    "name": "Joe Gebbia",
+    "group": "business"
+  },
+  {
+    "id": "drew-houston",
+    "name": "Drew Houston",
+    "group": "business"
+  },
+  {
+    "id": "stewart-butterfield",
+    "name": "Stewart Butterfield",
+    "group": "business"
+  },
+  {
+    "id": "tobias-lutke",
+    "name": "Tobias Lütke",
+    "group": "business"
+  },
+  {
+    "id": "daniel-ek",
+    "name": "Daniel Ek",
+    "group": "business"
+  },
+  {
+    "id": "evan-spiegel",
+    "name": "Evan Spiegel",
+    "group": "business"
+  },
+  {
+    "id": "jack-dorsey",
+    "name": "Jack Dorsey",
+    "group": "business"
+  },
+  {
+    "id": "biz-stone",
+    "name": "Biz Stone",
+    "group": "business"
+  },
+  {
+    "id": "jan-koum",
+    "name": "Jan Koum",
+    "group": "business"
+  },
+  {
+    "id": "brian-acton",
+    "name": "Brian Acton",
+    "group": "business"
+  },
+  {
+    "id": "dara-khosrowshahi",
+    "name": "Dara Khosrowshahi",
+    "group": "business"
+  },
+  {
+    "id": "travis-kalanick",
+    "name": "Travis Kalanick",
+    "group": "business"
+  },
+  {
+    "id": "tony-xu",
+    "name": "Tony Xu",
+    "group": "business"
+  },
+  {
+    "id": "howard-schultz",
+    "name": "Howard Schultz",
+    "group": "business"
+  },
+  {
+    "id": "ray-kroc",
+    "name": "Ray Kroc",
+    "group": "business"
+  },
+  {
+    "id": "disney",
+    "name": "Walt Disney",
+    "group": "business"
+  },
+  {
+    "id": "bob-iger",
+    "name": "Bob Iger",
+    "group": "business"
+  },
+  {
+    "id": "ted-sarandos",
+    "name": "Ted Sarandos",
+    "group": "business"
+  },
+  {
+    "id": "shantanu-narayen",
+    "name": "Shantanu Narayen",
+    "group": "business"
+  },
+  {
+    "id": "arvind-krishna",
+    "name": "Arvind Krishna",
+    "group": "business"
+  },
+  {
+    "id": "nikesh-arora",
+    "name": "Nikesh Arora",
+    "group": "business"
+  },
+  {
+    "id": "michael-dell",
+    "name": "Michael Dell",
+    "group": "business"
+  },
+  {
+    "id": "larry-ellison",
+    "name": "Larry Ellison",
+    "group": "business"
+  },
+  {
+    "id": "marc-andreessen",
+    "name": "Marc Andreessen",
+    "group": "business"
+  },
+  {
+    "id": "ben-horowitz",
+    "name": "Ben Horowitz",
+    "group": "business"
+  },
+  {
+    "id": "peter-thiel",
+    "name": "Peter Thiel",
+    "group": "business"
+  },
+  {
+    "id": "reid-hoffman",
+    "name": "Reid Hoffman",
+    "group": "business"
+  },
+  {
+    "id": "eric-schmidt",
+    "name": "Eric Schmidt",
+    "group": "business"
+  },
+  {
+    "id": "andy-jassy",
+    "name": "Andy Jassy",
+    "group": "business"
+  },
+  {
+    "id": "adam-neumann",
+    "name": "Adam Neumann",
+    "group": "business"
+  },
+  {
+    "id": "whitney-wolfe-herd",
+    "name": "Whitney Wolfe Herd",
+    "group": "business"
+  },
+  {
+    "id": "melanie-perkins",
+    "name": "Melanie Perkins",
+    "group": "business"
+  },
+  {
+    "id": "anne-wojcicki",
+    "name": "Anne Wojcicki",
+    "group": "business"
+  },
+  {
+    "id": "katrina-lake",
+    "name": "Katrina Lake",
+    "group": "business"
+  },
+  {
+    "id": "jennifer-hyman",
+    "name": "Jennifer Hyman",
+    "group": "business"
+  },
+  {
+    "id": "payal-kadakia",
+    "name": "Payal Kadakia",
+    "group": "business"
+  },
+  {
+    "id": "reshma-saujani",
+    "name": "Reshma Saujani",
+    "group": "business"
+  },
+  {
+    "id": "arianna-huffington",
+    "name": "Arianna Huffington",
+    "group": "business"
+  },
+  {
+    "id": "martha-stewart",
+    "name": "Martha Stewart",
+    "group": "business"
+  },
+  {
+    "id": "richard-branson",
+    "name": "Richard Branson",
+    "group": "business"
+  },
+  {
+    "id": "james-dyson",
+    "name": "James Dyson",
+    "group": "business"
+  },
+  {
+    "id": "alan-sugar",
+    "name": "Alan Sugar",
+    "group": "business"
+  },
+  {
+    "id": "deborah-meaden",
+    "name": "Deborah Meaden",
+    "group": "business"
+  },
+  {
+    "id": "ingvar-kamprad",
+    "name": "Ingvar Kamprad",
+    "group": "business"
+  },
+  {
+    "id": "stefan-persson",
+    "name": "Stefan Persson",
+    "group": "business"
+  },
+  {
+    "id": "bernard-arnault",
+    "name": "Bernard Arnault",
+    "group": "business"
+  },
+  {
+    "id": "francois-henri-pinault",
+    "name": "François-Henri Pinault",
+    "group": "business"
+  },
+  {
+    "id": "amancio-ortega",
+    "name": "Amancio Ortega",
+    "group": "business"
+  },
+  {
+    "id": "giorgio-armani",
+    "name": "Giorgio Armani",
+    "group": "business"
+  },
+  {
+    "id": "miuccia-prada",
+    "name": "Miuccia Prada",
+    "group": "business"
+  },
+  {
+    "id": "donatella-versace",
+    "name": "Donatella Versace",
+    "group": "business"
+  },
+  {
+    "id": "ralph-lauren",
+    "name": "Ralph Lauren",
+    "group": "business"
+  },
+  {
+    "id": "phil-knight",
+    "name": "Phil Knight",
+    "group": "business"
+  },
+  {
+    "id": "estee-lauder",
+    "name": "Estée Lauder",
+    "group": "business"
+  },
+  {
+    "id": "leonard-lauder",
+    "name": "Leonard Lauder",
+    "group": "business"
+  },
+  {
+    "id": "kevin-plank",
+    "name": "Kevin Plank",
+    "group": "business"
+  },
+  {
+    "id": "yvon-chouinard",
+    "name": "Yvon Chouinard",
+    "group": "business"
+  },
+  {
+    "id": "hamdi-ulukaya",
+    "name": "Hamdi Ulukaya",
+    "group": "business"
+  },
+  {
+    "id": "michael-bloomberg",
+    "name": "Michael Bloomberg",
+    "group": "business"
+  },
+  {
+    "id": "ray-dalio",
+    "name": "Ray Dalio",
+    "group": "business"
+  },
+  {
+    "id": "jamie-dimon",
+    "name": "Jamie Dimon",
+    "group": "business"
+  },
+  {
+    "id": "larry-fink",
+    "name": "Larry Fink",
+    "group": "business"
+  },
+  {
+    "id": "charlie-munger",
+    "name": "Charlie Munger",
+    "group": "business"
+  },
+  {
+    "id": "peter-lynch",
+    "name": "Peter Lynch",
+    "group": "business"
+  },
+  {
+    "id": "john-bogle",
+    "name": "John Bogle",
+    "group": "business"
+  },
+  {
+    "id": "benjamin-graham",
+    "name": "Benjamin Graham",
+    "group": "business"
+  },
+  {
+    "id": "cathie-wood",
+    "name": "Cathie Wood",
+    "group": "business"
+  },
+  {
+    "id": "ken-griffin",
+    "name": "Ken Griffin",
+    "group": "business"
+  },
+  {
+    "id": "stephen-schwarzman",
+    "name": "Stephen Schwarzman",
+    "group": "business"
+  },
+  {
+    "id": "henry-kravis",
+    "name": "Henry Kravis",
+    "group": "business"
+  },
+  {
+    "id": "george-soros",
+    "name": "George Soros",
+    "group": "business"
+  },
+  {
+    "id": "carl-icahn",
+    "name": "Carl Icahn",
+    "group": "business"
+  },
+  {
+    "id": "masayoshi-son",
+    "name": "Masayoshi Son",
+    "group": "business"
+  },
+  {
+    "id": "akio-morita",
+    "name": "Akio Morita",
+    "group": "business"
+  },
+  {
+    "id": "soichiro-honda",
+    "name": "Soichiro Honda",
+    "group": "business"
+  },
+  {
+    "id": "konosuke-matsushita",
+    "name": "Konosuke Matsushita",
+    "group": "business"
+  },
+  {
+    "id": "tadashi-yanai",
+    "name": "Tadashi Yanai",
+    "group": "business"
+  },
+  {
+    "id": "akio-toyoda",
+    "name": "Akio Toyoda",
+    "group": "business"
+  },
+  {
+    "id": "hiroshi-mikitani",
+    "name": "Hiroshi Mikitani",
+    "group": "business"
+  },
+  {
+    "id": "jack-ma",
+    "name": "Jack Ma",
+    "group": "business"
+  },
+  {
+    "id": "pony-ma",
+    "name": "Pony Ma",
+    "group": "business"
+  },
+  {
+    "id": "robin-li",
+    "name": "Robin Li",
+    "group": "business"
+  },
+  {
+    "id": "ren-zhengfei",
+    "name": "Ren Zhengfei",
+    "group": "business"
+  },
+  {
+    "id": "lei-jun",
+    "name": "Lei Jun",
+    "group": "business"
+  },
+  {
+    "id": "zhang-yiming",
+    "name": "Zhang Yiming",
+    "group": "business"
+  },
+  {
+    "id": "colin-huang",
+    "name": "Colin Huang",
+    "group": "business"
+  },
+  {
+    "id": "wang-xing",
+    "name": "Wang Xing",
+    "group": "business"
+  },
+  {
+    "id": "richard-liu",
+    "name": "Richard Liu",
+    "group": "business"
+  },
+  {
+    "id": "robin-zeng",
+    "name": "Robin Zeng",
+    "group": "business"
+  },
+  {
+    "id": "wang-chuanfu",
+    "name": "Wang Chuanfu",
+    "group": "business"
+  },
+  {
+    "id": "zhong-shanshan",
+    "name": "Zhong Shanshan",
+    "group": "business"
+  },
+  {
+    "id": "patrice-motsepe",
+    "name": "Patrice Motsepe",
+    "group": "business"
+  },
+  {
+    "id": "strive-masiyiwa",
+    "name": "Strive Masiyiwa",
+    "group": "business"
+  },
+  {
+    "id": "tony-elumelu",
+    "name": "Tony Elumelu",
+    "group": "business"
+  },
+  {
+    "id": "johann-rupert",
+    "name": "Johann Rupert",
+    "group": "business"
+  },
+  {
+    "id": "nicky-oppenheimer",
+    "name": "Nicky Oppenheimer",
+    "group": "business"
+  },
+  {
+    "id": "carlos-slim",
+    "name": "Carlos Slim",
+    "group": "business"
+  },
+  {
+    "id": "jorge-paulo-lemann",
+    "name": "Jorge Paulo Lemann",
+    "group": "business"
+  },
+  {
+    "id": "david-velez",
+    "name": "David Vélez",
+    "group": "business"
+  },
+  {
+    "id": "marcos-galperin",
+    "name": "Marcos Galperin",
+    "group": "business"
+  },
+  {
+    "id": "tope-awotona",
+    "name": "Tope Awotona",
+    "group": "business"
+  },
+  {
+    "id": "iyinoluwa-aboyeji",
+    "name": "Iyinoluwa Aboyeji",
+    "group": "business"
+  },
+  {
+    "id": "odunayo-eweniyi",
+    "name": "Odunayo Eweniyi",
+    "group": "business"
+  },
+  {
+    "id": "mo-ibrahim",
+    "name": "Mo Ibrahim",
+    "group": "business"
+  },
+  {
+    "id": "isabel-dos-santos",
+    "name": "Isabel dos Santos",
+    "group": "business"
+  },
+  {
+    "id": "folorunsho-alakija",
+    "name": "Folorunsho Alakija",
+    "group": "business"
+  },
+  {
+    "id": "ndidi-nwuneli",
+    "name": "Ndidi Nwuneli",
+    "group": "business"
+  },
+  {
+    "id": "rebecca-enonchong",
+    "name": "Rebecca Enonchong",
+    "group": "business"
+  },
+  {
+    "id": "vusi-thembekwayo",
+    "name": "Vusi Thembekwayo",
+    "group": "business"
+  },
+  {
+    "id": "virat-kohli",
+    "name": "Virat Kohli",
+    "group": "sport"
+  },
+  {
+    "id": "sachin-tendulkar",
+    "name": "Sachin Tendulkar",
+    "group": "sport"
+  },
+  {
+    "id": "ms-dhoni",
+    "name": "MS Dhoni",
+    "group": "sport"
+  },
+  {
+    "id": "rohit-sharma",
+    "name": "Rohit Sharma",
+    "group": "sport"
+  },
+  {
+    "id": "jasprit-bumrah",
+    "name": "Jasprit Bumrah",
+    "group": "sport"
+  },
+  {
+    "id": "ravindra-jadeja",
+    "name": "Ravindra Jadeja",
+    "group": "sport"
+  },
+  {
+    "id": "kapil-dev",
+    "name": "Kapil Dev",
+    "group": "sport"
+  },
+  {
+    "id": "sunil-gavaskar",
+    "name": "Sunil Gavaskar",
+    "group": "sport"
+  },
+  {
+    "id": "rahul-dravid",
+    "name": "Rahul Dravid",
+    "group": "sport"
+  },
+  {
+    "id": "sourav-ganguly",
+    "name": "Sourav Ganguly",
+    "group": "sport"
+  },
+  {
+    "id": "anil-kumble",
+    "name": "Anil Kumble",
+    "group": "sport"
+  },
+  {
+    "id": "vvs-laxman",
+    "name": "VVS Laxman",
+    "group": "sport"
+  },
+  {
+    "id": "yuvraj-singh",
+    "name": "Yuvraj Singh",
+    "group": "sport"
+  },
+  {
+    "id": "virender-sehwag",
+    "name": "Virender Sehwag",
+    "group": "sport"
+  },
+  {
+    "id": "harbhajan-singh",
+    "name": "Harbhajan Singh",
+    "group": "sport"
+  },
+  {
+    "id": "zaheer-khan",
+    "name": "Zaheer Khan",
+    "group": "sport"
+  },
+  {
+    "id": "mithali-raj",
+    "name": "Mithali Raj",
+    "group": "sport"
+  },
+  {
+    "id": "jhulan-goswami",
+    "name": "Jhulan Goswami",
+    "group": "sport"
+  },
+  {
+    "id": "smriti-mandhana",
+    "name": "Smriti Mandhana",
+    "group": "sport"
+  },
+  {
+    "id": "harmanpreet-kaur",
+    "name": "Harmanpreet Kaur",
+    "group": "sport"
+  },
+  {
+    "id": "shafali-verma",
+    "name": "Shafali Verma",
+    "group": "sport"
+  },
+  {
+    "id": "rishabh-pant",
+    "name": "Rishabh Pant",
+    "group": "sport"
+  },
+  {
+    "id": "shubman-gill",
+    "name": "Shubman Gill",
+    "group": "sport"
+  },
+  {
+    "id": "hardik-pandya",
+    "name": "Hardik Pandya",
+    "group": "sport"
+  },
+  {
+    "id": "ravichandran-ashwin",
+    "name": "Ravichandran Ashwin",
+    "group": "sport"
+  },
+  {
+    "id": "mohammed-shami",
+    "name": "Mohammed Shami",
+    "group": "sport"
+  },
+  {
+    "id": "kl-rahul",
+    "name": "KL Rahul",
+    "group": "sport"
+  },
+  {
+    "id": "suryakumar-yadav",
+    "name": "Suryakumar Yadav",
+    "group": "sport"
+  },
+  {
+    "id": "babar-azam",
+    "name": "Babar Azam",
+    "group": "sport"
+  },
+  {
+    "id": "shaheen-shah-afridi",
+    "name": "Shaheen Shah Afridi",
+    "group": "sport"
+  },
+  {
+    "id": "wasim-akram",
+    "name": "Wasim Akram",
+    "group": "sport"
+  },
+  {
+    "id": "waqar-younis",
+    "name": "Waqar Younis",
+    "group": "sport"
+  },
+  {
+    "id": "javed-miandad",
+    "name": "Javed Miandad",
+    "group": "sport"
+  },
+  {
+    "id": "kumar-sangakkara",
+    "name": "Kumar Sangakkara",
+    "group": "sport"
+  },
+  {
+    "id": "mahela-jayawardene",
+    "name": "Mahela Jayawardene",
+    "group": "sport"
+  },
+  {
+    "id": "sanath-jayasuriya",
+    "name": "Sanath Jayasuriya",
+    "group": "sport"
+  },
+  {
+    "id": "muttiah-muralitharan",
+    "name": "Muttiah Muralitharan",
+    "group": "sport"
+  },
+  {
+    "id": "lasith-malinga",
+    "name": "Lasith Malinga",
+    "group": "sport"
+  },
+  {
+    "id": "steve-smith",
+    "name": "Steve Smith",
+    "group": "sport"
+  },
+  {
+    "id": "pat-cummins",
+    "name": "Pat Cummins",
+    "group": "sport"
+  },
+  {
+    "id": "mitchell-starc",
+    "name": "Mitchell Starc",
+    "group": "sport"
+  },
+  {
+    "id": "david-warner",
+    "name": "David Warner",
+    "group": "sport"
+  },
+  {
+    "id": "ricky-ponting",
+    "name": "Ricky Ponting",
+    "group": "sport"
+  },
+  {
+    "id": "shane-warne",
+    "name": "Shane Warne",
+    "group": "sport"
+  },
+  {
+    "id": "glenn-mcgrath",
+    "name": "Glenn McGrath",
+    "group": "sport"
+  },
+  {
+    "id": "adam-gilchrist",
+    "name": "Adam Gilchrist",
+    "group": "sport"
+  },
+  {
+    "id": "steve-waugh",
+    "name": "Steve Waugh",
+    "group": "sport"
+  },
+  {
+    "id": "don-bradman",
+    "name": "Don Bradman",
+    "group": "sport"
+  },
+  {
+    "id": "kane-williamson",
+    "name": "Kane Williamson",
+    "group": "sport"
+  },
+  {
+    "id": "trent-boult",
+    "name": "Trent Boult",
+    "group": "sport"
+  },
+  {
+    "id": "brendon-mccullum",
+    "name": "Brendon McCullum",
+    "group": "sport"
+  },
+  {
+    "id": "ben-stokes",
+    "name": "Ben Stokes",
+    "group": "sport"
+  },
+  {
+    "id": "joe-root",
+    "name": "Joe Root",
+    "group": "sport"
+  },
+  {
+    "id": "james-anderson",
+    "name": "James Anderson",
+    "group": "sport"
+  },
+  {
+    "id": "stuart-broad",
+    "name": "Stuart Broad",
+    "group": "sport"
+  },
+  {
+    "id": "alastair-cook",
+    "name": "Alastair Cook",
+    "group": "sport"
+  },
+  {
+    "id": "kevin-pietersen",
+    "name": "Kevin Pietersen",
+    "group": "sport"
+  },
+  {
+    "id": "jonny-bairstow",
+    "name": "Jonny Bairstow",
+    "group": "sport"
+  },
+  {
+    "id": "eoin-morgan",
+    "name": "Eoin Morgan",
+    "group": "sport"
+  },
+  {
+    "id": "jos-buttler",
+    "name": "Jos Buttler",
+    "group": "sport"
+  },
+  {
+    "id": "chris-gayle",
+    "name": "Chris Gayle",
+    "group": "sport"
+  },
+  {
+    "id": "brian-lara",
+    "name": "Brian Lara",
+    "group": "sport"
+  },
+  {
+    "id": "viv-richards",
+    "name": "Viv Richards",
+    "group": "sport"
+  },
+  {
+    "id": "clive-lloyd",
+    "name": "Clive Lloyd",
+    "group": "sport"
+  },
+  {
+    "id": "garfield-sobers",
+    "name": "Garfield Sobers",
+    "group": "sport"
+  },
+  {
+    "id": "shivnarine-chanderpaul",
+    "name": "Shivnarine Chanderpaul",
+    "group": "sport"
+  },
+  {
+    "id": "andre-russell",
+    "name": "Andre Russell",
+    "group": "sport"
+  },
+  {
+    "id": "dwayne-bravo",
+    "name": "Dwayne Bravo",
+    "group": "sport"
+  },
+  {
+    "id": "ab-de-villiers",
+    "name": "AB de Villiers",
+    "group": "sport"
+  },
+  {
+    "id": "hashim-amla",
+    "name": "Hashim Amla",
+    "group": "sport"
+  },
+  {
+    "id": "dale-steyn",
+    "name": "Dale Steyn",
+    "group": "sport"
+  },
+  {
+    "id": "kagiso-rabada",
+    "name": "Kagiso Rabada",
+    "group": "sport"
+  },
+  {
+    "id": "faf-du-plessis",
+    "name": "Faf du Plessis",
+    "group": "sport"
+  },
+  {
+    "id": "jacques-kallis",
+    "name": "Jacques Kallis",
+    "group": "sport"
+  },
+  {
+    "id": "shaun-pollock",
+    "name": "Shaun Pollock",
+    "group": "sport"
+  },
+  {
+    "id": "graeme-smith",
+    "name": "Graeme Smith",
+    "group": "sport"
+  },
+  {
+    "id": "quinton-de-kock",
+    "name": "Quinton de Kock",
+    "group": "sport"
+  },
+  {
+    "id": "lionel-messi",
+    "name": "Lionel Messi",
+    "group": "sport"
+  },
+  {
+    "id": "cristiano-ronaldo",
+    "name": "Cristiano Ronaldo",
+    "group": "sport"
+  },
+  {
+    "id": "pele",
+    "name": "Pelé",
+    "group": "sport"
+  },
+  {
+    "id": "diego-maradona",
+    "name": "Diego Maradona",
+    "group": "sport"
+  },
+  {
+    "id": "zinedine-zidane",
+    "name": "Zinedine Zidane",
+    "group": "sport"
+  },
+  {
+    "id": "ronaldinho",
+    "name": "Ronaldinho",
+    "group": "sport"
+  },
+  {
+    "id": "ronaldo-nazario",
+    "name": "Ronaldo Nazário",
+    "group": "sport"
+  },
+  {
+    "id": "kaka",
+    "name": "Kaká",
+    "group": "sport"
+  },
+  {
+    "id": "andres-iniesta",
+    "name": "Andrés Iniesta",
+    "group": "sport"
+  },
+  {
+    "id": "xavi-hernandez",
+    "name": "Xavi Hernández",
+    "group": "sport"
+  },
+  {
+    "id": "luka-modric",
+    "name": "Luka Modrić",
+    "group": "sport"
+  },
+  {
+    "id": "toni-kroos",
+    "name": "Toni Kroos",
+    "group": "sport"
+  },
+  {
+    "id": "manuel-neuer",
+    "name": "Manuel Neuer",
+    "group": "sport"
+  },
+  {
+    "id": "robert-lewandowski",
+    "name": "Robert Lewandowski",
+    "group": "sport"
+  },
+  {
+    "id": "erling-haaland",
+    "name": "Erling Haaland",
+    "group": "sport"
+  },
+  {
+    "id": "kylian-mbappe",
+    "name": "Kylian Mbappé",
+    "group": "sport"
+  },
+  {
+    "id": "neymar",
+    "name": "Neymar",
+    "group": "sport"
+  },
+  {
+    "id": "vinicius-junior",
+    "name": "Vinícius Júnior",
+    "group": "sport"
+  },
+  {
+    "id": "karim-benzema",
+    "name": "Karim Benzema",
+    "group": "sport"
+  },
+  {
+    "id": "mohamed-salah",
+    "name": "Mohamed Salah",
+    "group": "sport"
+  },
+  {
+    "id": "sadio-mane",
+    "name": "Sadio Mané",
+    "group": "sport"
+  },
+  {
+    "id": "virgil-van-dijk",
+    "name": "Virgil van Dijk",
+    "group": "sport"
+  },
+  {
+    "id": "kevin-de-bruyne",
+    "name": "Kevin De Bruyne",
+    "group": "sport"
+  },
+  {
+    "id": "thierry-henry",
+    "name": "Thierry Henry",
+    "group": "sport"
+  },
+  {
+    "id": "johan-cruyff",
+    "name": "Johan Cruyff",
+    "group": "sport"
+  },
+  {
+    "id": "marco-van-basten",
+    "name": "Marco van Basten",
+    "group": "sport"
+  },
+  {
+    "id": "paolo-maldini",
+    "name": "Paolo Maldini",
+    "group": "sport"
+  },
+  {
+    "id": "franco-baresi",
+    "name": "Franco Baresi",
+    "group": "sport"
+  },
+  {
+    "id": "francesco-totti",
+    "name": "Francesco Totti",
+    "group": "sport"
+  },
+  {
+    "id": "gianluigi-buffon",
+    "name": "Gianluigi Buffon",
+    "group": "sport"
+  },
+  {
+    "id": "andrea-pirlo",
+    "name": "Andrea Pirlo",
+    "group": "sport"
+  },
+  {
+    "id": "zlatan-ibrahimovic",
+    "name": "Zlatan Ibrahimović",
+    "group": "sport"
+  },
+  {
+    "id": "wayne-rooney",
+    "name": "Wayne Rooney",
+    "group": "sport"
+  },
+  {
+    "id": "david-beckham",
+    "name": "David Beckham",
+    "group": "sport"
+  },
+  {
+    "id": "steven-gerrard",
+    "name": "Steven Gerrard",
+    "group": "sport"
+  },
+  {
+    "id": "frank-lampard",
+    "name": "Frank Lampard",
+    "group": "sport"
+  },
+  {
+    "id": "bobby-charlton",
+    "name": "Bobby Charlton",
+    "group": "sport"
+  },
+  {
+    "id": "george-best",
+    "name": "George Best",
+    "group": "sport"
+  },
+  {
+    "id": "didier-drogba",
+    "name": "Didier Drogba",
+    "group": "sport"
+  },
+  {
+    "id": "samuel-eto-o",
+    "name": "Samuel Eto'o",
+    "group": "sport"
+  },
+  {
+    "id": "george-weah",
+    "name": "George Weah",
+    "group": "sport"
+  },
+  {
+    "id": "sunil-chhetri",
+    "name": "Sunil Chhetri",
+    "group": "sport"
+  },
+  {
+    "id": "marta",
+    "name": "Marta",
+    "group": "sport"
+  },
+  {
+    "id": "alex-morgan",
+    "name": "Alex Morgan",
+    "group": "sport"
+  },
+  {
+    "id": "megan-rapinoe",
+    "name": "Megan Rapinoe",
+    "group": "sport"
+  },
+  {
+    "id": "sam-kerr",
+    "name": "Sam Kerr",
+    "group": "sport"
+  },
+  {
+    "id": "ada-hegerberg",
+    "name": "Ada Hegerberg",
+    "group": "sport"
+  },
+  {
+    "id": "michael-jordan",
+    "name": "Michael Jordan",
+    "group": "sport"
+  },
+  {
+    "id": "lebron-james",
+    "name": "LeBron James",
+    "group": "sport"
+  },
+  {
+    "id": "kobe-bryant",
+    "name": "Kobe Bryant",
+    "group": "sport"
+  },
+  {
+    "id": "stephen-curry",
+    "name": "Stephen Curry",
+    "group": "sport"
+  },
+  {
+    "id": "kevin-durant",
+    "name": "Kevin Durant",
+    "group": "sport"
+  },
+  {
+    "id": "magic-johnson",
+    "name": "Magic Johnson",
+    "group": "sport"
+  },
+  {
+    "id": "larry-bird",
+    "name": "Larry Bird",
+    "group": "sport"
+  },
+  {
+    "id": "tim-duncan",
+    "name": "Tim Duncan",
+    "group": "sport"
+  },
+  {
+    "id": "shaquille-o-neal",
+    "name": "Shaquille O'Neal",
+    "group": "sport"
+  },
+  {
+    "id": "kareem-abdul-jabbar",
+    "name": "Kareem Abdul-Jabbar",
+    "group": "sport"
+  },
+  {
+    "id": "giannis-antetokounmpo",
+    "name": "Giannis Antetokounmpo",
+    "group": "sport"
+  },
+  {
+    "id": "nikola-jokic",
+    "name": "Nikola Jokić",
+    "group": "sport"
+  },
+  {
+    "id": "luka-doncic",
+    "name": "Luka Dončić",
+    "group": "sport"
+  },
+  {
+    "id": "diana-taurasi",
+    "name": "Diana Taurasi",
+    "group": "sport"
+  },
+  {
+    "id": "sue-bird",
+    "name": "Sue Bird",
+    "group": "sport"
+  },
+  {
+    "id": "maya-moore",
+    "name": "Maya Moore",
+    "group": "sport"
+  },
+  {
+    "id": "breanna-stewart",
+    "name": "Breanna Stewart",
+    "group": "sport"
+  },
+  {
+    "id": "a-ja-wilson",
+    "name": "A'ja Wilson",
+    "group": "sport"
+  },
+  {
+    "id": "roger-federer",
+    "name": "Roger Federer",
+    "group": "sport"
+  },
+  {
+    "id": "rafael-nadal",
+    "name": "Rafael Nadal",
+    "group": "sport"
+  },
+  {
+    "id": "novak-djokovic",
+    "name": "Novak Djokovic",
+    "group": "sport"
+  },
+  {
+    "id": "serena-williams",
+    "name": "Serena Williams",
+    "group": "sport"
+  },
+  {
+    "id": "venus-williams",
+    "name": "Venus Williams",
+    "group": "sport"
+  },
+  {
+    "id": "steffi-graf",
+    "name": "Steffi Graf",
+    "group": "sport"
+  },
+  {
+    "id": "martina-navratilova",
+    "name": "Martina Navratilova",
+    "group": "sport"
+  },
+  {
+    "id": "king",
+    "name": "Billie Jean King",
+    "group": "sport"
+  },
+  {
+    "id": "pete-sampras",
+    "name": "Pete Sampras",
+    "group": "sport"
+  },
+  {
+    "id": "andre-agassi",
+    "name": "Andre Agassi",
+    "group": "sport"
+  },
+  {
+    "id": "bjorn-borg",
+    "name": "Björn Borg",
+    "group": "sport"
+  },
+  {
+    "id": "john-mcenroe",
+    "name": "John McEnroe",
+    "group": "sport"
+  },
+  {
+    "id": "andy-murray",
+    "name": "Andy Murray",
+    "group": "sport"
+  },
+  {
+    "id": "carlos-alcaraz",
+    "name": "Carlos Alcaraz",
+    "group": "sport"
+  },
+  {
+    "id": "jannik-sinner",
+    "name": "Jannik Sinner",
+    "group": "sport"
+  },
+  {
+    "id": "iga-swiatek",
+    "name": "Iga Świątek",
+    "group": "sport"
+  },
+  {
+    "id": "naomi-osaka",
+    "name": "Naomi Osaka",
+    "group": "sport"
+  },
+  {
+    "id": "ashleigh-barty",
+    "name": "Ashleigh Barty",
+    "group": "sport"
+  },
+  {
+    "id": "maria-sharapova",
+    "name": "Maria Sharapova",
+    "group": "sport"
+  },
+  {
+    "id": "sania-mirza",
+    "name": "Sania Mirza",
+    "group": "sport"
+  },
+  {
+    "id": "leander-paes",
+    "name": "Leander Paes",
+    "group": "sport"
+  },
+  {
+    "id": "usain-bolt",
+    "name": "Usain Bolt",
+    "group": "sport"
+  },
+  {
+    "id": "carl-lewis",
+    "name": "Carl Lewis",
+    "group": "sport"
+  },
+  {
+    "id": "jesse-owens",
+    "name": "Jesse Owens",
+    "group": "sport"
+  },
+  {
+    "id": "allyson-felix",
+    "name": "Allyson Felix",
+    "group": "sport"
+  },
+  {
+    "id": "shelly-ann-fraser-pryce",
+    "name": "Shelly-Ann Fraser-Pryce",
+    "group": "sport"
+  },
+  {
+    "id": "eliud-kipchoge",
+    "name": "Eliud Kipchoge",
+    "group": "sport"
+  },
+  {
+    "id": "haile-gebrselassie",
+    "name": "Haile Gebrselassie",
+    "group": "sport"
+  },
+  {
+    "id": "mo-farah",
+    "name": "Mo Farah",
+    "group": "sport"
+  },
+  {
+    "id": "milkha-singh",
+    "name": "Milkha Singh",
+    "group": "sport"
+  },
+  {
+    "id": "pt-usha",
+    "name": "PT Usha",
+    "group": "sport"
+  },
+  {
+    "id": "hima-das",
+    "name": "Hima Das",
+    "group": "sport"
+  },
+  {
+    "id": "neeraj-chopra",
+    "name": "Neeraj Chopra",
+    "group": "sport"
+  },
+  {
+    "id": "abhinav-bindra",
+    "name": "Abhinav Bindra",
+    "group": "sport"
+  },
+  {
+    "id": "mary-kom",
+    "name": "Mary Kom",
+    "group": "sport"
+  },
+  {
+    "id": "pv-sindhu",
+    "name": "PV Sindhu",
+    "group": "sport"
+  },
+  {
+    "id": "saina-nehwal",
+    "name": "Saina Nehwal",
+    "group": "sport"
+  },
+  {
+    "id": "michael-phelps",
+    "name": "Michael Phelps",
+    "group": "sport"
+  },
+  {
+    "id": "katie-ledecky",
+    "name": "Katie Ledecky",
+    "group": "sport"
+  },
+  {
+    "id": "simone-biles",
+    "name": "Simone Biles",
+    "group": "sport"
+  },
+  {
+    "id": "nadia-comaneci",
+    "name": "Nadia Comăneci",
+    "group": "sport"
+  },
+  {
+    "id": "tiger-woods",
+    "name": "Tiger Woods",
+    "group": "sport"
+  },
+  {
+    "id": "rory-mcilroy",
+    "name": "Rory McIlroy",
+    "group": "sport"
+  },
+  {
+    "id": "jack-nicklaus",
+    "name": "Jack Nicklaus",
+    "group": "sport"
+  },
+  {
+    "id": "annika-sorenstam",
+    "name": "Annika Sörenstam",
+    "group": "sport"
+  },
+  {
+    "id": "lewis-hamilton",
+    "name": "Lewis Hamilton",
+    "group": "sport"
+  },
+  {
+    "id": "max-verstappen",
+    "name": "Max Verstappen",
+    "group": "sport"
+  },
+  {
+    "id": "michael-schumacher",
+    "name": "Michael Schumacher",
+    "group": "sport"
+  },
+  {
+    "id": "ayrton-senna",
+    "name": "Ayrton Senna",
+    "group": "sport"
+  },
+  {
+    "id": "sebastian-vettel",
+    "name": "Sebastian Vettel",
+    "group": "sport"
+  },
+  {
+    "id": "muhammad-ali",
+    "name": "Muhammad Ali",
+    "group": "sport"
+  },
+  {
+    "id": "mike-tyson",
+    "name": "Mike Tyson",
+    "group": "sport"
+  },
+  {
+    "id": "floyd-mayweather",
+    "name": "Floyd Mayweather",
+    "group": "sport"
+  },
+  {
+    "id": "manny-pacquiao",
+    "name": "Manny Pacquiao",
+    "group": "sport"
+  },
+  {
+    "id": "canelo-alvarez",
+    "name": "Canelo Álvarez",
+    "group": "sport"
+  },
+  {
+    "id": "sugar-ray-leonard",
+    "name": "Sugar Ray Leonard",
+    "group": "sport"
+  },
+  {
+    "id": "joe-frazier",
+    "name": "Joe Frazier",
+    "group": "sport"
+  },
+  {
+    "id": "khabib-nurmagomedov",
+    "name": "Khabib Nurmagomedov",
+    "group": "sport"
+  },
+  {
+    "id": "anderson-silva",
+    "name": "Anderson Silva",
+    "group": "sport"
+  },
+  {
+    "id": "georges-st-pierre",
+    "name": "Georges St-Pierre",
+    "group": "sport"
+  },
+  {
+    "id": "amanda-nunes",
+    "name": "Amanda Nunes",
+    "group": "sport"
+  },
+  {
+    "id": "ronda-rousey",
+    "name": "Ronda Rousey",
+    "group": "sport"
+  },
+  {
+    "id": "gretzky",
+    "name": "Wayne Gretzky",
+    "group": "sport"
+  },
+  {
+    "id": "sidney-crosby",
+    "name": "Sidney Crosby",
+    "group": "sport"
+  },
+  {
+    "id": "connor-mcdavid",
+    "name": "Connor McDavid",
+    "group": "sport"
+  },
+  {
+    "id": "alex-ovechkin",
+    "name": "Alex Ovechkin",
+    "group": "sport"
+  },
+  {
+    "id": "mario-lemieux",
+    "name": "Mario Lemieux",
+    "group": "sport"
+  },
+  {
+    "id": "bobby-orr",
+    "name": "Bobby Orr",
+    "group": "sport"
+  },
+  {
+    "id": "hayley-wickenheiser",
+    "name": "Hayley Wickenheiser",
+    "group": "sport"
+  },
+  {
+    "id": "viswanathan-anand",
+    "name": "Viswanathan Anand",
+    "group": "sport"
+  },
+  {
+    "id": "magnus-carlsen",
+    "name": "Magnus Carlsen",
+    "group": "sport"
+  },
+  {
+    "id": "garry-kasparov",
+    "name": "Garry Kasparov",
+    "group": "sport"
+  },
+  {
+    "id": "judit-polgar",
+    "name": "Judit Polgár",
+    "group": "sport"
+  },
+  {
+    "id": "koneru-humpy",
+    "name": "Koneru Humpy",
+    "group": "sport"
+  },
+  {
+    "id": "sunil-narine",
+    "name": "Sunil Narine",
+    "group": "sport"
+  },
+  {
+    "id": "albert-einstein",
+    "name": "Albert Einstein",
+    "group": "science"
+  },
+  {
+    "id": "marie-curie",
+    "name": "Marie Curie",
+    "group": "science"
+  },
+  {
+    "id": "isaac-newton",
+    "name": "Isaac Newton",
+    "group": "science"
+  },
+  {
+    "id": "charles-darwin",
+    "name": "Charles Darwin",
+    "group": "science"
+  },
+  {
+    "id": "nikola-tesla",
+    "name": "Nikola Tesla",
+    "group": "science"
+  },
+  {
+    "id": "thomas-edison",
+    "name": "Thomas Edison",
+    "group": "science"
+  },
+  {
+    "id": "ada-lovelace",
+    "name": "Ada Lovelace",
+    "group": "science"
+  },
+  {
+    "id": "alan-turing",
+    "name": "Alan Turing",
+    "group": "science"
+  },
+  {
+    "id": "grace-hopper",
+    "name": "Grace Hopper",
+    "group": "science"
+  },
+  {
+    "id": "katherine-johnson",
+    "name": "Katherine Johnson",
+    "group": "science"
+  },
+  {
+    "id": "rosalind-franklin",
+    "name": "Rosalind Franklin",
+    "group": "science"
+  },
+  {
+    "id": "jane-goodall",
+    "name": "Jane Goodall",
+    "group": "science"
+  },
+  {
+    "id": "richard-feynman",
+    "name": "Richard Feynman",
+    "group": "science"
+  },
+  {
+    "id": "stephen-hawking",
+    "name": "Stephen Hawking",
+    "group": "science"
+  },
+  {
+    "id": "carl-sagan",
+    "name": "Carl Sagan",
+    "group": "science"
+  },
+  {
+    "id": "neil-degrasse-tyson",
+    "name": "Neil deGrasse Tyson",
+    "group": "science"
+  },
+  {
+    "id": "c-v-raman",
+    "name": "C. V. Raman",
+    "group": "science"
+  },
+  {
+    "id": "homi-j-bhabha",
+    "name": "Homi J. Bhabha",
+    "group": "science"
+  },
+  {
+    "id": "satyendra-nath-bose",
+    "name": "Satyendra Nath Bose",
+    "group": "science"
+  },
+  {
+    "id": "srinivasa-ramanujan",
+    "name": "Srinivasa Ramanujan",
+    "group": "science"
+  },
+  {
+    "id": "jagadish-chandra-bose",
+    "name": "Jagadish Chandra Bose",
+    "group": "science"
+  },
+  {
+    "id": "venki-ramakrishnan",
+    "name": "Venki Ramakrishnan",
+    "group": "science"
+  },
+  {
+    "id": "har-gobind-khorana",
+    "name": "Har Gobind Khorana",
+    "group": "science"
+  },
+  {
+    "id": "subrahmanyan-chandrasekhar",
+    "name": "Subrahmanyan Chandrasekhar",
+    "group": "science"
+  },
+  {
+    "id": "amartya-sen",
+    "name": "Amartya Sen",
+    "group": "science"
+  },
+  {
+    "id": "abhijit-banerjee",
+    "name": "Abhijit Banerjee",
+    "group": "science"
+  },
+  {
+    "id": "esther-duflo",
+    "name": "Esther Duflo",
+    "group": "science"
+  },
+  {
+    "id": "raghuram-rajan",
+    "name": "Raghuram Rajan",
+    "group": "science"
+  },
+  {
+    "id": "gita-gopinath",
+    "name": "Gita Gopinath",
+    "group": "science"
+  },
+  {
+    "id": "janet-yellen",
+    "name": "Janet Yellen",
+    "group": "science"
+  },
+  {
+    "id": "ben-bernanke",
+    "name": "Ben Bernanke",
+    "group": "science"
+  },
+  {
+    "id": "elinor-ostrom",
+    "name": "Elinor Ostrom",
+    "group": "science"
+  },
+  {
+    "id": "muhammad-yunus",
+    "name": "Muhammad Yunus",
+    "group": "science"
+  },
+  {
+    "id": "tu-youyou",
+    "name": "Tu Youyou",
+    "group": "science"
+  },
+  {
+    "id": "jennifer-doudna",
+    "name": "Jennifer Doudna",
+    "group": "science"
+  },
+  {
+    "id": "emmanuelle-charpentier",
+    "name": "Emmanuelle Charpentier",
+    "group": "science"
+  },
+  {
+    "id": "katalin-kariko",
+    "name": "Katalin Karikó",
+    "group": "science"
+  },
+  {
+    "id": "frances-arnold",
+    "name": "Frances Arnold",
+    "group": "science"
+  },
+  {
+    "id": "donna-strickland",
+    "name": "Donna Strickland",
+    "group": "science"
+  },
+  {
+    "id": "tim-berners-lee",
+    "name": "Tim Berners-Lee",
+    "group": "science"
+  },
+  {
+    "id": "vint-cerf",
+    "name": "Vint Cerf",
+    "group": "science"
+  },
+  {
+    "id": "margaret-hamilton",
+    "name": "Margaret Hamilton",
+    "group": "science"
+  },
+  {
+    "id": "radia-perlman",
+    "name": "Radia Perlman",
+    "group": "science"
+  },
+  {
+    "id": "fei-fei-li",
+    "name": "Fei-Fei Li",
+    "group": "science"
+  },
+  {
+    "id": "yann-lecun",
+    "name": "Yann LeCun",
+    "group": "science"
+  },
+  {
+    "id": "geoffrey-hinton",
+    "name": "Geoffrey Hinton",
+    "group": "science"
+  },
+  {
+    "id": "yoshua-bengio",
+    "name": "Yoshua Bengio",
+    "group": "science"
+  },
+  {
+    "id": "andrew-ng",
+    "name": "Andrew Ng",
+    "group": "science"
+  },
+  {
+    "id": "demis-hassabis",
+    "name": "Demis Hassabis",
+    "group": "science"
+  },
+  {
+    "id": "ilya-sutskever",
+    "name": "Ilya Sutskever",
+    "group": "science"
+  },
+  {
+    "id": "dario-amodei",
+    "name": "Dario Amodei",
+    "group": "science"
+  },
+  {
+    "id": "mira-murati",
+    "name": "Mira Murati",
+    "group": "science"
+  },
+  {
+    "id": "galileo-galilei",
+    "name": "Galileo Galilei",
+    "group": "science"
+  },
+  {
+    "id": "johannes-kepler",
+    "name": "Johannes Kepler",
+    "group": "science"
+  },
+  {
+    "id": "nicolaus-copernicus",
+    "name": "Nicolaus Copernicus",
+    "group": "science"
+  },
+  {
+    "id": "louis-pasteur",
+    "name": "Louis Pasteur",
+    "group": "science"
+  },
+  {
+    "id": "alexander-fleming",
+    "name": "Alexander Fleming",
+    "group": "science"
+  },
+  {
+    "id": "jonas-salk",
+    "name": "Jonas Salk",
+    "group": "science"
+  },
+  {
+    "id": "florence-nightingale",
+    "name": "Florence Nightingale",
+    "group": "science"
+  },
+  {
+    "id": "elizabeth-blackwell",
+    "name": "Elizabeth Blackwell",
+    "group": "science"
+  },
+  {
+    "id": "barbara-mcclintock",
+    "name": "Barbara McClintock",
+    "group": "science"
+  },
+  {
+    "id": "rita-levi-montalcini",
+    "name": "Rita Levi-Montalcini",
+    "group": "science"
+  },
+  {
+    "id": "dorothy-hodgkin",
+    "name": "Dorothy Hodgkin",
+    "group": "science"
+  },
+  {
+    "id": "lise-meitner",
+    "name": "Lise Meitner",
+    "group": "science"
+  },
+  {
+    "id": "chien-shiung-wu",
+    "name": "Chien-Shiung Wu",
+    "group": "science"
+  },
+  {
+    "id": "hideki-yukawa",
+    "name": "Hideki Yukawa",
+    "group": "science"
+  },
+  {
+    "id": "abdus-salam",
+    "name": "Abdus Salam",
+    "group": "science"
+  },
+  {
+    "id": "ahmed-zewail",
+    "name": "Ahmed Zewail",
+    "group": "science"
+  },
+  {
+    "id": "may-britt-moser",
+    "name": "May-Britt Moser",
+    "group": "science"
+  },
+  {
+    "id": "carol-w-greider",
+    "name": "Carol W. Greider",
+    "group": "science"
+  },
+  {
+    "id": "elizabeth-blackburn",
+    "name": "Elizabeth Blackburn",
+    "group": "science"
+  },
+  {
+    "id": "shinya-yamanaka",
+    "name": "Shinya Yamanaka",
+    "group": "science"
+  },
+  {
+    "id": "yoshinori-ohsumi",
+    "name": "Yoshinori Ohsumi",
+    "group": "science"
+  },
+  {
+    "id": "aristotle",
+    "name": "Aristotle",
+    "group": "letters"
+  },
+  {
+    "id": "plato",
+    "name": "Plato",
+    "group": "letters"
+  },
+  {
+    "id": "socrates",
+    "name": "Socrates",
+    "group": "letters"
+  },
+  {
+    "id": "marcus-aurelius",
+    "name": "Marcus Aurelius",
+    "group": "letters"
+  },
+  {
+    "id": "seneca",
+    "name": "Seneca",
+    "group": "letters"
+  },
+  {
+    "id": "epictetus",
+    "name": "Epictetus",
+    "group": "letters"
+  },
+  {
+    "id": "confucius",
+    "name": "Confucius",
+    "group": "letters"
+  },
+  {
+    "id": "laozi",
+    "name": "Laozi",
+    "group": "letters"
+  },
+  {
+    "id": "rumi",
+    "name": "Rumi",
+    "group": "letters"
+  },
+  {
+    "id": "khalil-gibran",
+    "name": "Khalil Gibran",
+    "group": "letters"
+  },
+  {
+    "id": "twain",
+    "name": "Mark Twain",
+    "group": "letters"
+  },
+  {
+    "id": "maya-angelou",
+    "name": "Maya Angelou",
+    "group": "letters"
+  },
+  {
+    "id": "toni-morrison",
+    "name": "Toni Morrison",
+    "group": "letters"
+  },
+  {
+    "id": "chimamanda-ngozi-adichie",
+    "name": "Chimamanda Ngozi Adichie",
+    "group": "letters"
+  },
+  {
+    "id": "arundhati-roy",
+    "name": "Arundhati Roy",
+    "group": "letters"
+  },
+  {
+    "id": "jhumpa-lahiri",
+    "name": "Jhumpa Lahiri",
+    "group": "letters"
+  },
+  {
+    "id": "salman-rushdie",
+    "name": "Salman Rushdie",
+    "group": "letters"
+  },
+  {
+    "id": "vikram-seth",
+    "name": "Vikram Seth",
+    "group": "letters"
+  },
+  {
+    "id": "r-k-narayan",
+    "name": "R. K. Narayan",
+    "group": "letters"
+  },
+  {
+    "id": "rabindranath-tagore",
+    "name": "Rabindranath Tagore",
+    "group": "letters"
+  },
+  {
+    "id": "munshi-premchand",
+    "name": "Munshi Premchand",
+    "group": "letters"
+  },
+  {
+    "id": "amrita-pritam",
+    "name": "Amrita Pritam",
+    "group": "letters"
+  },
+  {
+    "id": "haruki-murakami",
+    "name": "Haruki Murakami",
+    "group": "letters"
+  },
+  {
+    "id": "gabriel-garcia-marquez",
+    "name": "Gabriel García Márquez",
+    "group": "letters"
+  },
+  {
+    "id": "isabel-allende",
+    "name": "Isabel Allende",
+    "group": "letters"
+  },
+  {
+    "id": "pablo-neruda",
+    "name": "Pablo Neruda",
+    "group": "letters"
+  },
+  {
+    "id": "octavio-paz",
+    "name": "Octavio Paz",
+    "group": "letters"
+  },
+  {
+    "id": "jorge-luis-borges",
+    "name": "Jorge Luis Borges",
+    "group": "letters"
+  },
+  {
+    "id": "virginia-woolf",
+    "name": "Virginia Woolf",
+    "group": "letters"
+  },
+  {
+    "id": "jane-austen",
+    "name": "Jane Austen",
+    "group": "letters"
+  },
+  {
+    "id": "george-orwell",
+    "name": "George Orwell",
+    "group": "letters"
+  },
+  {
+    "id": "james-baldwin",
+    "name": "James Baldwin",
+    "group": "letters"
+  },
+  {
+    "id": "langston-hughes",
+    "name": "Langston Hughes",
+    "group": "letters"
+  },
+  {
+    "id": "audre-lorde",
+    "name": "Audre Lorde",
+    "group": "letters"
+  },
+  {
+    "id": "bell-hooks",
+    "name": "bell hooks",
+    "group": "letters"
+  },
+  {
+    "id": "brene-brown",
+    "name": "Brené Brown",
+    "group": "letters"
+  },
+  {
+    "id": "yuval-noah-harari",
+    "name": "Yuval Noah Harari",
+    "group": "letters"
+  },
+  {
+    "id": "malcolm-gladwell",
+    "name": "Malcolm Gladwell",
+    "group": "letters"
+  },
+  {
+    "id": "angela-duckworth",
+    "name": "Angela Duckworth",
+    "group": "letters"
+  },
+  {
+    "id": "carol-dweck",
+    "name": "Carol Dweck",
+    "group": "letters"
+  },
+  {
+    "id": "stephen-covey",
+    "name": "Stephen Covey",
+    "group": "letters"
+  },
+  {
+    "id": "dale-carnegie",
+    "name": "Dale Carnegie",
+    "group": "letters"
+  },
+  {
+    "id": "napoleon-hill",
+    "name": "Napoleon Hill",
+    "group": "letters"
+  },
+  {
+    "id": "james-clear",
+    "name": "James Clear",
+    "group": "letters"
+  },
+  {
+    "id": "ryan-holiday",
+    "name": "Ryan Holiday",
+    "group": "letters"
+  },
+  {
+    "id": "cal-newport",
+    "name": "Cal Newport",
+    "group": "letters"
+  },
+  {
+    "id": "paulo-coelho",
+    "name": "Paulo Coelho",
+    "group": "letters"
+  },
+  {
+    "id": "khaled-hosseini",
+    "name": "Khaled Hosseini",
+    "group": "letters"
+  },
+  {
+    "id": "elif-shafak",
+    "name": "Elif Shafak",
+    "group": "letters"
+  },
+  {
+    "id": "orhan-pamuk",
+    "name": "Orhan Pamuk",
+    "group": "letters"
+  },
+  {
+    "id": "mo-yan",
+    "name": "Mo Yan",
+    "group": "letters"
+  },
+  {
+    "id": "lu-xun",
+    "name": "Lu Xun",
+    "group": "letters"
+  },
+  {
+    "id": "beyonce",
+    "name": "Beyoncé",
+    "group": "culture"
+  },
+  {
+    "id": "taylor-swift",
+    "name": "Taylor Swift",
+    "group": "culture"
+  },
+  {
+    "id": "adele",
+    "name": "Adele",
+    "group": "culture"
+  },
+  {
+    "id": "billie-eilish",
+    "name": "Billie Eilish",
+    "group": "culture"
+  },
+  {
+    "id": "a-r-rahman",
+    "name": "A. R. Rahman",
+    "group": "culture"
+  },
+  {
+    "id": "lata-mangeshkar",
+    "name": "Lata Mangeshkar",
+    "group": "culture"
+  },
+  {
+    "id": "asha-bhosle",
+    "name": "Asha Bhosle",
+    "group": "culture"
+  },
+  {
+    "id": "kishore-kumar",
+    "name": "Kishore Kumar",
+    "group": "culture"
+  },
+  {
+    "id": "mohammed-rafi",
+    "name": "Mohammed Rafi",
+    "group": "culture"
+  },
+  {
+    "id": "sonu-nigam",
+    "name": "Sonu Nigam",
+    "group": "culture"
+  },
+  {
+    "id": "arijit-singh",
+    "name": "Arijit Singh",
+    "group": "culture"
+  },
+  {
+    "id": "shreya-ghoshal",
+    "name": "Shreya Ghoshal",
+    "group": "culture"
+  },
+  {
+    "id": "jay-z",
+    "name": "Jay-Z",
+    "group": "culture"
+  },
+  {
+    "id": "kendrick-lamar",
+    "name": "Kendrick Lamar",
+    "group": "culture"
+  },
+  {
+    "id": "drake",
+    "name": "Drake",
+    "group": "culture"
+  },
+  {
+    "id": "shakira",
+    "name": "Shakira",
+    "group": "culture"
+  },
+  {
+    "id": "madonna",
+    "name": "Madonna",
+    "group": "culture"
+  },
+  {
+    "id": "freddie-mercury",
+    "name": "Freddie Mercury",
+    "group": "culture"
+  },
+  {
+    "id": "michael-jackson",
+    "name": "Michael Jackson",
+    "group": "culture"
+  },
+  {
+    "id": "prince",
+    "name": "Prince",
+    "group": "culture"
+  },
+  {
+    "id": "bob-marley",
+    "name": "Bob Marley",
+    "group": "culture"
+  },
+  {
+    "id": "bob-dylan",
+    "name": "Bob Dylan",
+    "group": "culture"
+  },
+  {
+    "id": "aretha-franklin",
+    "name": "Aretha Franklin",
+    "group": "culture"
+  },
+  {
+    "id": "whitney-houston",
+    "name": "Whitney Houston",
+    "group": "culture"
+  },
+  {
+    "id": "stevie-wonder",
+    "name": "Stevie Wonder",
+    "group": "culture"
+  },
+  {
+    "id": "yo-yo-ma",
+    "name": "Yo-Yo Ma",
+    "group": "culture"
+  },
+  {
+    "id": "zakir-hussain",
+    "name": "Zakir Hussain",
+    "group": "culture"
+  },
+  {
+    "id": "ravi-shankar",
+    "name": "Ravi Shankar",
+    "group": "culture"
+  },
+  {
+    "id": "m-s-subbulakshmi",
+    "name": "M. S. Subbulakshmi",
+    "group": "culture"
+  },
+  {
+    "id": "bhimsen-joshi",
+    "name": "Bhimsen Joshi",
+    "group": "culture"
+  },
+  {
+    "id": "ilaiyaraaja",
+    "name": "Ilaiyaraaja",
+    "group": "culture"
+  },
+  {
+    "id": "shah-rukh-khan",
+    "name": "Shah Rukh Khan",
+    "group": "culture"
+  },
+  {
+    "id": "amitabh-bachchan",
+    "name": "Amitabh Bachchan",
+    "group": "culture"
+  },
+  {
+    "id": "rajinikanth",
+    "name": "Rajinikanth",
+    "group": "culture"
+  },
+  {
+    "id": "kamal-haasan",
+    "name": "Kamal Haasan",
+    "group": "culture"
+  },
+  {
+    "id": "mohanlal",
+    "name": "Mohanlal",
+    "group": "culture"
+  },
+  {
+    "id": "mammootty",
+    "name": "Mammootty",
+    "group": "culture"
+  },
+  {
+    "id": "prabhas",
+    "name": "Prabhas",
+    "group": "culture"
+  },
+  {
+    "id": "allu-arjun",
+    "name": "Allu Arjun",
+    "group": "culture"
+  },
+  {
+    "id": "yash",
+    "name": "Yash",
+    "group": "culture"
+  },
+  {
+    "id": "deepika-padukone",
+    "name": "Deepika Padukone",
+    "group": "culture"
+  },
+  {
+    "id": "priyanka-chopra",
+    "name": "Priyanka Chopra",
+    "group": "culture"
+  },
+  {
+    "id": "alia-bhatt",
+    "name": "Alia Bhatt",
+    "group": "culture"
+  },
+  {
+    "id": "sridevi",
+    "name": "Sridevi",
+    "group": "culture"
+  },
+  {
+    "id": "madhuri-dixit",
+    "name": "Madhuri Dixit",
+    "group": "culture"
+  },
+  {
+    "id": "satyajit-ray",
+    "name": "Satyajit Ray",
+    "group": "culture"
+  },
+  {
+    "id": "s-s-rajamouli",
+    "name": "S. S. Rajamouli",
+    "group": "culture"
+  },
+  {
+    "id": "mani-ratnam",
+    "name": "Mani Ratnam",
+    "group": "culture"
+  },
+  {
+    "id": "sanjay-leela-bhansali",
+    "name": "Sanjay Leela Bhansali",
+    "group": "culture"
+  },
+  {
+    "id": "zoya-akhtar",
+    "name": "Zoya Akhtar",
+    "group": "culture"
+  },
+  {
+    "id": "mira-nair",
+    "name": "Mira Nair",
+    "group": "culture"
+  },
+  {
+    "id": "steven-spielberg",
+    "name": "Steven Spielberg",
+    "group": "culture"
+  },
+  {
+    "id": "martin-scorsese",
+    "name": "Martin Scorsese",
+    "group": "culture"
+  },
+  {
+    "id": "christopher-nolan",
+    "name": "Christopher Nolan",
+    "group": "culture"
+  },
+  {
+    "id": "greta-gerwig",
+    "name": "Greta Gerwig",
+    "group": "culture"
+  },
+  {
+    "id": "hayao-miyazaki",
+    "name": "Hayao Miyazaki",
+    "group": "culture"
+  },
+  {
+    "id": "bong-joon-ho",
+    "name": "Bong Joon-ho",
+    "group": "culture"
+  },
+  {
+    "id": "akira-kurosawa",
+    "name": "Akira Kurosawa",
+    "group": "culture"
+  },
+  {
+    "id": "spike-lee",
+    "name": "Spike Lee",
+    "group": "culture"
+  },
+  {
+    "id": "jordan-peele",
+    "name": "Jordan Peele",
+    "group": "culture"
+  },
+  {
+    "id": "ryan-coogler",
+    "name": "Ryan Coogler",
+    "group": "culture"
+  },
+  {
+    "id": "chloe-zhao",
+    "name": "Chloé Zhao",
+    "group": "culture"
+  },
+  {
+    "id": "alfonso-cuaron",
+    "name": "Alfonso Cuarón",
+    "group": "culture"
+  },
+  {
+    "id": "guillermo-del-toro",
+    "name": "Guillermo del Toro",
+    "group": "culture"
+  },
+  {
+    "id": "denis-villeneuve",
+    "name": "Denis Villeneuve",
+    "group": "culture"
+  },
+  {
+    "id": "dwayne-johnson",
+    "name": "Dwayne Johnson",
+    "group": "culture"
+  },
+  {
+    "id": "tom-cruise",
+    "name": "Tom Cruise",
+    "group": "culture"
+  },
+  {
+    "id": "leonardo-dicaprio",
+    "name": "Leonardo DiCaprio",
+    "group": "culture"
+  },
+  {
+    "id": "meryl-streep",
+    "name": "Meryl Streep",
+    "group": "culture"
+  },
+  {
+    "id": "viola-davis",
+    "name": "Viola Davis",
+    "group": "culture"
+  },
+  {
+    "id": "denzel-washington",
+    "name": "Denzel Washington",
+    "group": "culture"
+  },
+  {
+    "id": "morgan-freeman",
+    "name": "Morgan Freeman",
+    "group": "culture"
+  },
+  {
+    "id": "will-smith",
+    "name": "Will Smith",
+    "group": "culture"
+  },
+  {
+    "id": "keanu-reeves",
+    "name": "Keanu Reeves",
+    "group": "culture"
+  },
+  {
+    "id": "zendaya",
+    "name": "Zendaya",
+    "group": "culture"
+  },
+  {
+    "id": "mrbeast",
+    "name": "MrBeast",
+    "group": "culture"
+  },
+  {
+    "id": "marques-brownlee",
+    "name": "Marques Brownlee",
+    "group": "culture"
+  },
+  {
+    "id": "casey-neistat",
+    "name": "Casey Neistat",
+    "group": "culture"
+  },
+  {
+    "id": "emma-chamberlain",
+    "name": "Emma Chamberlain",
+    "group": "culture"
+  },
+  {
+    "id": "khaby-lame",
+    "name": "Khaby Lame",
+    "group": "culture"
+  },
+  {
+    "id": "mark-rober",
+    "name": "Mark Rober",
+    "group": "culture"
+  },
+  {
+    "id": "ali-abdaal",
+    "name": "Ali Abdaal",
+    "group": "culture"
+  },
+  {
+    "id": "lilly-singh",
+    "name": "Lilly Singh",
+    "group": "culture"
+  },
+  {
+    "id": "prajakta-koli",
+    "name": "Prajakta Koli",
+    "group": "culture"
+  },
+  {
+    "id": "bhuvan-bam",
+    "name": "Bhuvan Bam",
+    "group": "culture"
+  },
+  {
+    "id": "ashish-chanchlani",
+    "name": "Ashish Chanchlani",
+    "group": "culture"
+  },
+  {
+    "id": "carryminati",
+    "name": "CarryMinati",
+    "group": "culture"
+  },
+  {
+    "id": "tanmay-bhat",
+    "name": "Tanmay Bhat",
+    "group": "culture"
+  },
+  {
+    "id": "zakir-khan",
+    "name": "Zakir Khan",
+    "group": "culture"
+  },
+  {
+    "id": "vir-das",
+    "name": "Vir Das",
+    "group": "culture"
+  },
+  {
+    "id": "kapil-sharma",
+    "name": "Kapil Sharma",
+    "group": "culture"
+  },
+  {
+    "id": "trevor-noah",
+    "name": "Trevor Noah",
+    "group": "culture"
+  },
+  {
+    "id": "hasan-minhaj",
+    "name": "Hasan Minhaj",
+    "group": "culture"
+  },
+  {
+    "id": "greta-thunberg",
+    "name": "Greta Thunberg",
+    "group": "culture"
+  },
+  {
+    "id": "rm-of-bts",
+    "name": "RM of BTS",
+    "group": "culture"
+  },
+  {
+    "id": "jung-kook",
+    "name": "Jung Kook",
+    "group": "culture"
+  },
+  {
+    "id": "jennie-kim",
+    "name": "Jennie Kim",
+    "group": "culture"
+  },
+  {
+    "id": "lisa-manobal",
+    "name": "Lisa Manobal",
+    "group": "culture"
+  },
+  {
+    "id": "iu",
+    "name": "IU",
+    "group": "culture"
+  },
+  {
+    "id": "pewdiepie",
+    "name": "PewDiePie",
+    "group": "culture"
+  },
+  {
+    "id": "yes-theory",
+    "name": "Yes Theory",
+    "group": "culture"
+  },
+  {
+    "id": "derek-muller",
+    "name": "Derek Muller",
+    "group": "culture"
+  },
+  {
+    "id": "michael-stevens",
+    "name": "Michael Stevens",
+    "group": "culture"
+  },
+  {
+    "id": "simone-giertz",
+    "name": "Simone Giertz",
+    "group": "culture"
+  }
+]

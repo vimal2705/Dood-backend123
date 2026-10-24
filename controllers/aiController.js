@@ -97,7 +97,7 @@ ${message}
 Reply as Dood's mentor. Challenge, give feedback, then suggest the next 48 hours. End with one direct question.`;
 
     const { content, model } = await chatCompletion({
-      messages: mentorMessages(req.body?.messages, payload),
+      messages: mentorMessages(req.body?.messages, payload, context.idols),
       temperature: 0.45,
     });
 
@@ -145,7 +145,7 @@ JSON shape:
 { "note": "two short sentences" }`;
 
       const result = await chatCompletion({
-        messages: mentorMessages([], payload),
+        messages: mentorMessages([], payload, context.idols),
         json: true,
         temperature: 0.5,
       });
@@ -198,7 +198,7 @@ JSON shape:
 Return 1-3 suggestedTodos. If missed items exist, the first suggestion must address them.`;
 
     const { content, model } = await chatCompletion({
-      messages: mentorMessages([], payload),
+      messages: mentorMessages([], payload, context.idols),
       json: true,
       temperature: 0.3,
     });
@@ -283,7 +283,7 @@ JSON shape:
 }`;
 
     const { content, model } = await chatCompletion({
-      messages: mentorMessages([], payload),
+      messages: mentorMessages([], payload, context.idols),
       json: true,
       temperature: 0.35,
     });
@@ -435,7 +435,7 @@ JSON shape:
 }`;
 
     const { content, model } = await chatCompletion({
-      messages: mentorMessages([], payload),
+      messages: mentorMessages([], payload, context.idols),
       json: true,
       temperature: 0.3,
     });

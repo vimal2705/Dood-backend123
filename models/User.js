@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
+const { IDOL_IDS, MAX_IDOLS } = require("../utils/idols");
 
 const userSchema = new mongoose.Schema(
   {
@@ -66,6 +67,24 @@ const userSchema = new mongoose.Schema(
     intent: {
       type: String,
       enum: ["exam", "business", "sport", "home", "money"],
+    },
+    idols: {
+      type: [{ type: String, enum: IDOL_IDS }],
+      default: [],
+      validate: {
+        validator: (value) => !value || value.length <= MAX_IDOLS,
+        message: "Pick at most 3 idols",
+      },
+    },
+    dreamBio: {
+      type: String,
+      trim: true,
+      maxlength: 180,
+      default: "",
+    },
+    dreamBioKey: {
+      type: String,
+      default: "",
     },
     resetPasswordOtp: String,
     resetPasswordOtpExpire: Date,

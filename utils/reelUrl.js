@@ -51,7 +51,7 @@ const parseReelUrl = raw => {
       platform: "instagram",
       externalId: instagramCode,
       url: `https://www.instagram.com/reel/${instagramCode}/`,
-      embedUrl: `https://www.instagram.com/reel/${instagramCode}/embed`,
+      embedUrl: `https://www.instagram.com/reel/${instagramCode}/embed/captioned/?cr=1&v=14&wp=540`,
       thumbnailUrl: "",
     };
   }

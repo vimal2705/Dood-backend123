@@ -16,6 +16,8 @@ const crypto = require("crypto");
 const { DeleteObjectCommand, S3Client } = require("@aws-sdk/client-s3");
 const sendEmail = require("../utils/email");
 const { INTENTS } = require("../utils/intents");
+const { normalizeIdols } = require("../utils/idols");
+const { buildProfileCard } = require("../utils/profileCard");
 const { validationResult } = require("express-validator");
 
 // Access tokens are short. The refresh token stays valid until sign-out.
@@ -182,6 +184,7 @@ exports.signup = async (req, res) => {
         phoneNumber: user.phoneNumber,
         dob: user.dob,
         intent: user.intent || null,
+        idols: user.idols || [],
       },
     });
   } catch (error) {
@@ -232,6 +235,8 @@ exports.login = async (req, res) => {
         username: user.username,
         phoneNumber: user.phoneNumber,
         dob: user.dob,
+        intent: user.intent || null,
+        idols: user.idols || [],
       },
     });
   } catch (error) {
@@ -508,10 +513,17 @@ exports.verifyOtpAndReset = async (req, res) => {
 exports.getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user.id);
+    if (!user) {
+      return res.status(404).json({ success: false, message: "User not found" });
+    }
+    const card = await buildProfileCard(user);
+    const plain = user.toObject();
+    plain.dreamBio = card.bio;
+    plain.clubLabel = card.club.label;
 
     res.status(200).json({
       success: true,
-      user,
+      user: plain,
     });
   } catch (error) {
     console.error(error);
@@ -540,6 +552,17 @@ exports.updateProfile = async (req, res) => {
     }
     if (INTENTS.includes(intent)) {
       user.intent = intent;
+    }
+    if (req.body.idols !== undefined) {
+      const idols = normalizeIdols(req.body.idols);
+      const sent = Array.isArray(req.body.idols) ? req.body.idols.length : 0;
+      if (idols.length < 1 || idols.length > 3 || idols.length !== sent) {
+        return res.status(400).json({
+          success: false,
+          message: "Pick 1 to 3 idols from the list",
+        });
+      }
+      user.idols = idols;
     }
 
     await user.save();
@@ -619,6 +642,7 @@ exports.refresh = async (req, res) => {
         phoneNumber: user.phoneNumber,
         dob: user.dob,
         intent: user.intent || null,
+        idols: user.idols || [],
       },
     });
   } catch (error) {

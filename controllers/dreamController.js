@@ -7,6 +7,7 @@ const MoneyEntry = require('../models/MoneyEntry');
 const { validationResult } = require('express-validator');
 const { sanitizePoints } = require('../utils/points');
 const { syncAllDreamProgress, syncDreamProgress } = require('../utils/dreamProgress');
+const { recordEvent } = require('../utils/analytics');
 
 // @desc    Create a new dream
 // @route   POST /api/dreams
@@ -50,6 +51,7 @@ exports.createDream = async (req, res) => {
 
     await dream.save();
 
+    recordEvent(req.user.id, "dream_create");
     res.status(201).json({
       success: true,
       message: 'Dream created successfully',

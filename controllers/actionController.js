@@ -4,6 +4,7 @@ const Task = require('../models/Task');
 const Note = require('../models/Note');
 const { validationResult } = require('express-validator');
 const { asId, syncDreamProgress } = require('../utils/dreamProgress');
+const { recordEvent } = require('../utils/analytics');
 
 // @desc    Create a new action
 // @route   POST /api/actions
@@ -194,6 +195,7 @@ exports.updateAction = async (req, res) => {
       action.status = status;
       if (status === 'completed' && !action.completedDate) {
         action.completedDate = new Date();
+        recordEvent(req.user.id, 'action_done');
       }
       if (status === 'dropped') {
         action.completedDate = null;
@@ -274,6 +276,7 @@ exports.completeAction = async (req, res) => {
     }
 
     await syncDreamProgress(req.user.id, asId(action.dreamId));
+    recordEvent(req.user.id, 'action_done');
 
     res.status(200).json({
       success: true,

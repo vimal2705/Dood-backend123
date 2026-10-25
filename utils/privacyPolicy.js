@@ -1,4 +1,4 @@
-const PRIVACY_UPDATED = '17 September 2026';
+const PRIVACY_UPDATED = '24 October 2026';
 
 const PRIVACY_SECTIONS = [
   {
@@ -7,11 +7,11 @@ const PRIVACY_SECTIONS = [
   },
   {
     title: 'What we collect',
-    body: 'When you create an account we collect your name, email, username, date of birth, password (stored hashed), and optional intent (exam, business, sport, home, or money). Phone number is optional. While you use Dood we store the content you add: dreams and dream photos, actions, to-dos, ideas, notes, money entries, focus and challenge sessions, evening notes, and notification preferences. We also store a technical account id so your data stays on your account.',
+    body: 'When you create an account we collect your name, email, username, date of birth, password (stored hashed), idols you pick, and optional intent (exam, business, sport, home, or money). Phone number is optional. While you use Dood we store the content you add: dreams and dream photos, actions, to-dos, ideas, notes, money entries, focus and challenge sessions, reels, evening notes, and notification preferences. We also store a technical account id and product events such as app opens, sign-ins, and feature use so we can run and fix Dood. We also store a short crash note if the app fails.',
   },
   {
     title: 'What we do not collect',
-    body: 'Dood does not use tracking SDKs, advertising identifiers, or analytics that follow you across other apps. Notifications are scheduled on your device. We do not sell your data. We do not use your content to train public AI models for other companies’ products.',
+    body: 'Dood does not use tracking SDKs, advertising identifiers, or analytics that follow you across other apps. Product events stay on Dood’s own server and are deleted with your account. Notifications are scheduled on your device. We do not sell your data. We do not use your content to train public AI models for other companies’ products.',
   },
   {
     title: 'How we use it',

@@ -18,6 +18,8 @@ const sendEmail = require("../utils/email");
 const { INTENTS } = require("../utils/intents");
 const { normalizeIdols } = require("../utils/idols");
 const { buildProfileCard } = require("../utils/profileCard");
+const { recordEvent } = require("../utils/analytics");
+const AppEvent = require("../models/AppEvent");
 const { validationResult } = require("express-validator");
 
 // Access tokens are short. The refresh token stays valid until sign-out.
@@ -123,6 +125,7 @@ exports.deleteAccount = async (req, res) => {
       ProductivityPreference.deleteMany({ userId }),
       ProductivityInsight.deleteMany({ userId }),
       Reel.deleteMany({ userId }),
+      AppEvent.deleteMany({ userId }),
     ]);
 
     await User.deleteOne({ _id: userId });
@@ -170,6 +173,7 @@ exports.signup = async (req, res) => {
     });
 
     const { token, refreshToken } = await issueSession(user);
+    recordEvent(user._id, "signup");
 
     res.status(201).json({
       success: true,
@@ -222,6 +226,7 @@ exports.login = async (req, res) => {
     }
 
     const { token, refreshToken } = await issueSession(user);
+    recordEvent(user._id, "login");
 
     res.status(200).json({
       success: true,
@@ -563,6 +568,7 @@ exports.updateProfile = async (req, res) => {
         });
       }
       user.idols = idols;
+      recordEvent(user._id, "idol_save");
     }
 
     await user.save();

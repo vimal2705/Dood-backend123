@@ -4,6 +4,7 @@ const Reel = require("../models/Reel");
 const { parseReelUrl } = require("../utils/reelUrl");
 const { deleteByUrls, putObject } = require("../utils/r2");
 const { downloadVideo, extensionFor, looksLikeVideoUrl } = require("../utils/reelFile");
+const { recordEvent } = require("../utils/analytics");
 
 const MAX_REELS = 40;
 
@@ -77,6 +78,7 @@ exports.createReel = async (req, res) => {
     if (looksLikeVideoUrl(parsed.url)) {
       const file = await downloadVideo(parsed.url);
       const reel = await saveStoredVideo(req.user.id, file);
+      recordEvent(req.user.id, "reel_save");
       return res.status(201).json({ success: true, reel: serialize(reel) });
     }
 
@@ -87,6 +89,7 @@ exports.createReel = async (req, res) => {
 
     await ensureRoom(req.user.id);
     const reel = await Reel.create({ userId: req.user.id, ...parsed });
+    recordEvent(req.user.id, "reel_save");
     return res.status(201).json({ success: true, reel: serialize(reel) });
   } catch (error) {
     if (error?.code === 11000) {
@@ -119,6 +122,7 @@ exports.uploadReelFile = async (req, res) => {
       contentType: contentType.startsWith("video/") ? contentType : "video/mp4",
       extension: extensionFor(contentType, req.file.originalname),
     });
+    recordEvent(req.user.id, "reel_save");
     return res.status(201).json({ success: true, reel: serialize(reel) });
   } catch (error) {
     console.error(error);

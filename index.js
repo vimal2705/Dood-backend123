@@ -19,6 +19,7 @@ const focusRoutes = require("./routes/focusRoutes");
 const challengeRoutes = require("./routes/challengeRoutes");
 const appConfigRoutes = require("./routes/appConfigRoutes");
 const reelRoutes = require("./routes/reelRoutes");
+const analyticsRoutes = require("./routes/analyticsRoutes");
 
 // Initialize app
 const app = express();
@@ -41,6 +42,14 @@ const authLimiter = rateLimit({
   standardHeaders: true,
   legacyHeaders: false,
   message: { success: false, message: "Too many attempts, try again later" },
+});
+
+const analyticsLimiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  limit: 120,
+  standardHeaders: true,
+  legacyHeaders: false,
+  message: { success: false, message: "Too many events" },
 });
 
 const aiLimiter = rateLimit({
@@ -89,6 +98,7 @@ app.use("/api/focus-sessions", focusRoutes);
 app.use("/api/challenges", challengeRoutes);
 app.use("/api/app-config", appConfigRoutes);
 app.use("/api/reels", reelRoutes);
+app.use("/api/analytics", analyticsLimiter, analyticsRoutes);
 
 const { privacyHtml, supportHtml } = require("./utils/privacyPolicy");
 app.get(["/privacy", "/privacy-policy"], (_req, res) => {
@@ -103,6 +113,15 @@ app.get(["/support", "/help"], (_req, res) => {
 // Health check route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to Dood Backend API" });
+});
+
+app.get("/health", (_req, res) => {
+  const mongoose = require("mongoose");
+  const ready = mongoose.connection.readyState === 1;
+  res.status(ready ? 200 : 503).json({
+    ok: ready,
+    service: "dood",
+  });
 });
 
 // Error handling middleware

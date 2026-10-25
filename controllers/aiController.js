@@ -5,6 +5,7 @@ const Task = require("../models/Task");
 const Idea = require("../models/Idea");
 const User = require("../models/User");
 const { JSON_ONLY_SUFFIX } = require("../utils/aiMentorPrompt");
+const { recordEvent } = require("../utils/analytics");
 const {
   chatCompletion,
   parseJsonContent,
@@ -101,6 +102,7 @@ Reply as Dood's mentor. Challenge, give feedback, then suggest the next 48 hours
       temperature: 0.45,
     });
 
+    recordEvent(req.user.id, "coach_chat");
     return res.json({
       success: true,
       reply: content,

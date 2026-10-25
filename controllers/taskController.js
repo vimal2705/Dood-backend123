@@ -4,6 +4,7 @@ const Dream = require('../models/Dream');
 const Note = require('../models/Note');
 const { validationResult } = require('express-validator');
 const { asId, syncDreamProgress } = require('../utils/dreamProgress');
+const { recordEvent } = require('../utils/analytics');
 
 const startOfDay = (date = new Date()) => {
   const next = new Date(date);
@@ -377,6 +378,7 @@ exports.toggleTaskCompletion = async (req, res) => {
     // Set or unset completion date
     if (task.isCompleted) {
       task.completedDate = new Date();
+      recordEvent(req.user.id, 'task_done');
     } else {
       task.completedDate = null;
     }

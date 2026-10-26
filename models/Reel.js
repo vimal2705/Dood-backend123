@@ -47,6 +47,6 @@ const reelSchema = new mongoose.Schema(
   { timestamps: true },
 );
 
-reelSchema.index({ userId: 1, url: 1 }, { unique: true });
+reelSchema.index({ url: 1 }, { unique: true });
 
 module.exports = mongoose.model("Reel", reelSchema);

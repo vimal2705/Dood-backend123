@@ -20,7 +20,7 @@ const storedReel = (publicUrl, contentType) => ({
 const ensureRoom = async userId => {
   const count = await Reel.countDocuments({ userId });
   if (count >= MAX_REELS) {
-    const error = new Error("You can save 40 reels. Remove one to add another.");
+    const error = new Error("You can add 40 reels. Remove one of yours to add another.");
     error.status = 400;
     throw error;
   }
@@ -34,12 +34,12 @@ const saveStoredVideo = async (userId, { buffer, contentType, extension }) => {
     body: buffer,
     contentType,
   });
-  const existing = await Reel.findOne({ userId, url: publicUrl });
+  const existing = await Reel.findOne({ url: publicUrl });
   if (existing) return existing;
   return Reel.create({ userId, ...storedReel(publicUrl, contentType) });
 };
 
-const serialize = reel => ({
+const serialize = (reel, viewerId) => ({
   id: String(reel._id),
   platform: reel.platform,
   url: reel.url,
@@ -47,13 +47,17 @@ const serialize = reel => ({
   thumbnailUrl: reel.thumbnailUrl || "",
   externalId: reel.externalId || "",
   contentType: reel.contentType || "",
+  mine: String(reel.userId) === String(viewerId),
   createdAt: reel.createdAt,
 });
 
 exports.listReels = async (req, res) => {
   try {
-    const reels = await Reel.find({ userId: req.user.id }).sort({ createdAt: -1 });
-    return res.json({ success: true, reels: reels.map(serialize) });
+    const reels = await Reel.find().sort({ createdAt: -1 }).limit(80);
+    return res.json({
+      success: true,
+      reels: reels.map((reel) => serialize(reel, req.user.id)),
+    });
   } catch (error) {
     console.error(error);
     return res.status(500).json({ success: false, message: "Could not load reels" });
@@ -79,25 +83,23 @@ exports.createReel = async (req, res) => {
       const file = await downloadVideo(parsed.url);
       const reel = await saveStoredVideo(req.user.id, file);
       recordEvent(req.user.id, "reel_save");
-      return res.status(201).json({ success: true, reel: serialize(reel) });
+      return res.status(201).json({ success: true, reel: serialize(reel, req.user.id) });
     }
 
-    const existing = await Reel.findOne({ userId: req.user.id, url: parsed.url });
+    const existing = await Reel.findOne({ url: parsed.url });
     if (existing) {
-      return res.json({ success: true, reel: serialize(existing) });
+      return res.json({ success: true, reel: serialize(existing, req.user.id) });
     }
 
     await ensureRoom(req.user.id);
     const reel = await Reel.create({ userId: req.user.id, ...parsed });
     recordEvent(req.user.id, "reel_save");
-    return res.status(201).json({ success: true, reel: serialize(reel) });
+    return res.status(201).json({ success: true, reel: serialize(reel, req.user.id) });
   } catch (error) {
     if (error?.code === 11000) {
       const parsed = parseReelUrl(req.body.url);
-      const existing = parsed
-        ? await Reel.findOne({ userId: req.user.id, url: parsed.url })
-        : null;
-      if (existing) return res.json({ success: true, reel: serialize(existing) });
+      const existing = parsed ? await Reel.findOne({ url: parsed.url }) : null;
+      if (existing) return res.json({ success: true, reel: serialize(existing, req.user.id) });
     }
     console.error(error);
     return res.status(error.status || 500).json({
@@ -123,7 +125,7 @@ exports.uploadReelFile = async (req, res) => {
       extension: extensionFor(contentType, req.file.originalname),
     });
     recordEvent(req.user.id, "reel_save");
-    return res.status(201).json({ success: true, reel: serialize(reel) });
+    return res.status(201).json({ success: true, reel: serialize(reel, req.user.id) });
   } catch (error) {
     console.error(error);
     return res.status(error.status || 500).json({
